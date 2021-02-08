@@ -8,5 +8,12 @@ public class Tester {
 
     System.out.println();
     System.out.println(Recursion.countNoDoubleLetterWords(0,""));
+    System.out.println(Recursion.countNoDoubleLetterWords(1,""));
+    System.out.println(Recursion.countNoDoubleLetterWords(2,""));
+    System.out.println(Recursion.countNoDoubleLetterWords(3,""));
+    System.out.println(Recursion.countNoDoubleLetterWords(4,""));
+    System.out.println(Recursion.countNoDoubleLetterWords(5,""));
+    System.out.println(Recursion.countNoDoubleLetterWords(6,""));
+    System.out.println(Recursion.countNoDoubleLetterWords(7,""));
   }
 }

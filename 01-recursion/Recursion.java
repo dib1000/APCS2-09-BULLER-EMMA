@@ -18,7 +18,13 @@ public class Recursion {
       }
     }
     else {
-      return 21;
+      long numWords = 0;
+      for(int i = 0; i<26; i++) {
+        if(word.length()<1 || word.charAt(word.length()-1)!=(char)('a'+i)) {
+          numWords+=countNoDoubleLetterWords(length-1,word+(char)('a'+i));
+        }
+      }
+      return numWords;
     }
   }
 }
