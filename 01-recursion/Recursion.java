@@ -27,4 +27,17 @@ public class Recursion {
       return numWords;
     }
   }
+
+  public static double sqrt(double n) {
+    return newtonSqrt(n,1);
+  }
+  public static double newtonSqrt(double num, double guess) {
+    if(Math.abs(guess*guess-num)<=0.00001) {
+      return guess;
+    }
+    else {
+      guess = ((num/guess)+guess)/2;
+      return newtonSqrt(num,guess);
+    }
+  }
 }
