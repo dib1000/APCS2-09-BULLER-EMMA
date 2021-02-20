@@ -32,26 +32,28 @@ public class QueenBoard {
         int cAdd = c+i;
         int cSub = c-i;
         if(rAdd<board.length) {
-          board[rAdd][c] = 1;
+          board[rAdd][c] += 1;
           if(cAdd<board.length) {
-            board[r][cAdd] = 1;
-            board[rAdd][cAdd] = 1;
+            board[rAdd][cAdd] += 1;
           }
           if(cSub>=0) {
-            board[r][cSub] = 1;
-            board[rAdd][cSub] = 1;
+            board[rAdd][cSub] += 1;
           }
         }
         if(rSub>=0) {
-          board[rSub][c] = 1;
+          board[rSub][c] += 1;
           if(cAdd<board.length) {
-            board[r][cAdd] = 1;
-            board[rSub][cAdd] = 1;
+            board[rSub][cAdd] += 1;
           }
           if(cSub>=0) {
-            board[r][cSub] = 1;
-            board[rSub][cSub] = 1;
+            board[rSub][cSub] += 1;
           }
+        }
+        if(cAdd<board.length) {
+          board[r][cAdd]+=1;
+        }
+        if(cSub>=0) {
+          board[r][cSub]+=1;
         }
       }
       return true;
