@@ -58,4 +58,38 @@ public class QueenBoard {
     }
     return false;
   }
+
+  public void removeQueen(int r, int c) {
+    if(board[r][c]==-1) {
+      board[r][c]= 0;
+      for(int i = 1; i<board.length; i++) {
+        int rAdd = r+i;
+        int rSub = r-i;
+        int cAdd = c+i;
+        int cSub = c-i;
+        if(rAdd<board.length) {
+          board[rAdd][c] = 0;
+          if(cAdd<board.length) {
+            board[r][cAdd] = 0;
+            board[rAdd][cAdd] = 0;
+          }
+          if(cSub>=0) {
+            board[r][cSub] = 0;
+            board[rAdd][cSub] = 0;
+          }
+        }
+        if(rSub>=0) {
+          board[rSub][c] = 0;
+          if(cAdd<board.length) {
+            board[r][cAdd] = 0;
+            board[rSub][cAdd] = 0;
+          }
+          if(cSub>=0) {
+            board[r][cSub] = 0;
+            board[rSub][cSub] = 0;
+          }
+        }
+      }
+    }
+  }
 }
