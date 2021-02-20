@@ -22,7 +22,7 @@ public class QueenBoard {
     return stringBoard;
   }
 
-  public boolean addQueen(int r, int c) {
+  private boolean addQueen(int r, int c) {
     //check if queen is already there OR if it's a dangerous spot
     if(board[r][c]<=0) {
       board[r][c] = -1; //queen value;
@@ -61,7 +61,7 @@ public class QueenBoard {
     return false;
   }
 
-  public void removeQueen(int r, int c) {
+  private void removeQueen(int r, int c) {
     if(board[r][c]==-1) {
       board[r][c]= 0;
       for(int i = 1; i<board.length; i++) {
