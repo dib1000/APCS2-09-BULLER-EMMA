@@ -112,19 +112,29 @@ public class QueenBoard {
     if(c==board.length) {
       return true;
     }
-    int curPlace = r;
-    for(int i = 0; i<board.length-curPlace; i++) {
-        boolean queen = addQueen(r+i,c);
-        if(r+i==board.length && !(queen)) {
-          for(int j = 0; j<board.length; j++) {
-            if(board[j][c-1]==-1) {
-              removeQueen(j,c-1);
-              return solveHelper(j,c-1);
+    for(int i = 0; i<board.length; i++) {
+        if(r>=board.length) {
+          if(c-1<0) {
+            return false;
+          }
+          for(int o = 0; o<board.length; o++) {
+            if(board[o][c-1]==-1) {
+              removeQueen(o,c-1);
+              return solveHelper(o+1,c-1);
             }
           }
         }
+        boolean queen = addQueen(r+i,c);
         if(queen) {
-          return solveHelper(r,c+1);
+          return solveHelper(0,c+1);
+        }
+        if(r+i==board.length-1 && !(queen)) {
+          for(int j = 0; j<board.length; j++) {
+            if(board[j][c-1]==-1) {
+              removeQueen(j,c-1);
+              return solveHelper(j+1,c-1);
+            }
+          }
         }
       }
       return false;

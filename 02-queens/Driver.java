@@ -30,5 +30,16 @@ public class Driver {
     System.out.println(f.toString());
     q.solve();
     System.out.println(q.toString());
+
+    QueenBoard t = new QueenBoard(2);
+    QueenBoard tr = new QueenBoard(3);
+    QueenBoard o = new QueenBoard(1);
+    System.out.println(t.solve());
+    System.out.println(tr.solve());
+    System.out.println(t.toString());
+    System.out.println(tr.toString());
+    System.out.println(o.solve());
+    System.out.println(o.toString());
+
   }
 }
