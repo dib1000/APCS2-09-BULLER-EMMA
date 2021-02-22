@@ -23,5 +23,12 @@ public class Driver {
 //    System.out.println(q.addQueen(0,7));
 //    q.removeQueen(5,7);
 //    System.out.println(q.addQueen(0,7));
+
+    //TESTING solve
+    QueenBoard f = new QueenBoard(4);
+    f.solve();
+    System.out.println(f.toString());
+    q.solve();
+    System.out.println(q.toString());
   }
 }

@@ -108,4 +108,29 @@ public class QueenBoard {
     return true;
   }
 
+  public boolean solveHelper(int r, int c) {
+    if(c==board.length) {
+      return true;
+    }
+    int curPlace = r;
+    for(int i = 0; i<board.length-curPlace; i++) {
+        boolean queen = addQueen(r+i,c);
+        if(r+i==board.length && !(queen)) {
+          for(int j = 0; j<board.length; j++) {
+            if(board[j][c-1]==-1) {
+              removeQueen(j,c-1);
+              return solveHelper(j,c-1);
+            }
+          }
+        }
+        if(queen) {
+          return solveHelper(r,c+1);
+        }
+      }
+      return false;
+    }
+
+  public boolean solve() {
+    return solveHelper(0,0);
+  }
 }
