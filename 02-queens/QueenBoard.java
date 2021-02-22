@@ -96,4 +96,16 @@ public class QueenBoard {
       }
     }
   }
+
+  private boolean checkClear() {
+    for(int r = 0; r<board.length; r++) {
+      for(int c = 0; c<board.length; c++) {
+        if(board[r][c]!=0) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
 }
