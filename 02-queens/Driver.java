@@ -30,6 +30,12 @@ public class Driver {
     System.out.println(f.toString());
     q.solve();
     System.out.println(q.toString());
+    try {
+      q.solve();
+    }
+    catch(IllegalStateException e) {
+      e.printStackTrace();
+    }
 
     QueenBoard t = new QueenBoard(2);
     QueenBoard tr = new QueenBoard(3);

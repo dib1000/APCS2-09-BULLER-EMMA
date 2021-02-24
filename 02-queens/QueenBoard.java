@@ -101,11 +101,11 @@ public class QueenBoard {
     for(int r = 0; r<board.length; r++) {
       for(int c = 0; c<board.length; c++) {
         if(board[r][c]!=0) {
-          return false;
+          return true;
         }
       }
     }
-    return true;
+    return false;
   }
 
   public boolean solveHelper(int r, int c) {
@@ -141,6 +141,9 @@ public class QueenBoard {
     }
 
   public boolean solve() {
+    if(checkClear()) {
+      throw new IllegalStateException("Board has to be cleared");
+    }
     return solveHelper(0,0);
   }
 }
