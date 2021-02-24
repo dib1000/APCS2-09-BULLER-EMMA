@@ -108,32 +108,17 @@ public class QueenBoard {
     return false;
   }
 
-  public boolean solveHelper(int r, int c) {
-    if(c==board.length) {
-      return true;
+  public boolean solveHelper(int c) {
+    if(c==board.length) { //end of board
+      return true; //n queens are there
     }
     for(int i = 0; i<board.length; i++) {
-        if(r>=board.length) {
-          if(c-1<0) {
-            return false;
+        if(addQueen(i,c)) {
+          if(solveHelper(c+1)) {
+            return true;
           }
-          for(int o = 0; o<board.length; o++) {
-            if(board[o][c-1]==-1) {
-              removeQueen(o,c-1);
-              return solveHelper(o+1,c-1);
-            }
-          }
-        }
-        boolean queen = addQueen(r+i,c);
-        if(queen) {
-          return solveHelper(0,c+1);
-        }
-        if(r+i==board.length-1 && !(queen)) {
-          for(int j = 0; j<board.length; j++) {
-            if(board[j][c-1]==-1) {
-              removeQueen(j,c-1);
-              return solveHelper(j+1,c-1);
-            }
+          if(!(solveHelper(c+1))) {
+            removeQueen(i,c);
           }
         }
       }
@@ -144,6 +129,6 @@ public class QueenBoard {
     if(checkClear()) {
       throw new IllegalStateException("Board has to be cleared");
     }
-    return solveHelper(0,0);
+    return solveHelper(0);
   }
 }

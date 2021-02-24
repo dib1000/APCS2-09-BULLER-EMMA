@@ -26,7 +26,7 @@ public class Driver {
 
     //TESTING solve
     QueenBoard f = new QueenBoard(4);
-    f.solve();
+    System.out.println(f.solve());
     System.out.println(f.toString());
     q.solve();
     System.out.println(q.toString());
@@ -46,6 +46,9 @@ public class Driver {
     System.out.println(tr.toString());
     System.out.println(o.solve());
     System.out.println(o.toString());
+    QueenBoard big = new QueenBoard(25);
+    big.solve();
+    System.out.println(big.toString());
 
   }
 }
