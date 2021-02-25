@@ -113,16 +113,16 @@ public class QueenBoard {
       return true; //n queens are there
     }
     for(int i = 0; i<board.length; i++) {
-        if(addQueen(i,c)) {
-          if(solveHelper(c+1)) {
+        if(addQueen(i,c)) { //addQueen, if true, do one of two actions
+          if(solveHelper(c+1)) { //when c==board.length, return true again and end loop;
             return true;
           }
-          if(!(solveHelper(c+1))) {
+          if(!(solveHelper(c+1))) { //if false, remove the queen
             removeQueen(i,c);
           }
         }
       }
-      return false;
+      return false; //when row is done, return false;
     }
 
   public boolean solve() {
@@ -130,5 +130,33 @@ public class QueenBoard {
       throw new IllegalStateException("Board has to be cleared");
     }
     return solveHelper(0);
+  }
+
+  public int countSolutions() {
+    if(checkClear()) {
+      throw new IllegalStateException("Board has to be cleared");
+    }
+    return countSolutions(0);
+  }
+
+  public int countSolutions(int col) { //wrapper thing
+    int tracker = 0; //track number of solutions
+    if(col==board.length) { //when there is a solution return this value
+      return 1;
+    }
+    for(int i = 0; i<board.length; i++) {
+      if(addQueen(i,col)) {
+        System.out.println(toString());
+        if(countSolutions(col+1)==1) {
+          removeQueen(i,col);
+          continue;
+        }
+        else {
+          removeQueen(i,col);
+          System.out.println(toString());
+        }
+      }
+    }
+    return tracker; //return value
   }
 }

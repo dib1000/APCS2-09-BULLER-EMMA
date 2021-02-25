@@ -46,9 +46,27 @@ public class Driver {
     System.out.println(tr.toString());
     System.out.println(o.solve());
     System.out.println(o.toString());
-    QueenBoard big = new QueenBoard(25);
-    big.solve();
-    System.out.println(big.toString());
+    // QueenBoard big = new QueenBoard(25);
+    // big.solve();
+    // System.out.println(big.toString());
+
+    System.out.println();
+
+    System.out.println("TESTING countSolutions");
+    QueenBoard wow = new QueenBoard(4);
+    QueenBoard eight = new QueenBoard(5);
+    System.out.println(wow.countSolutions());
+    // System.out.println(wow.toString());
+    System.out.println(eight.countSolutions());
+    // System.out.println(eight.toString());
+    // System.out.println(tr.countSolutions());
+    // System.out.println(t.countSolutions());
+    // try {
+    //   o.countSolutions();
+    // }
+    // catch(IllegalStateException e) {
+    //   e.printStackTrace();
+    // }
 
   }
 }
