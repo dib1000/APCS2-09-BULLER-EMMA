@@ -53,20 +53,20 @@ public class Driver {
     System.out.println();
 
     System.out.println("TESTING countSolutions");
-    QueenBoard wow = new QueenBoard(4);
-    QueenBoard eight = new QueenBoard(5);
+    QueenBoard wow = new QueenBoard(7);
+    QueenBoard eight = new QueenBoard(9);
+    QueenBoard bigg = new QueenBoard(11);
     System.out.println(wow.countSolutions());
     // System.out.println(wow.toString());
     System.out.println(eight.countSolutions());
-    // System.out.println(eight.toString());
-    // System.out.println(tr.countSolutions());
-    // System.out.println(t.countSolutions());
-    // try {
-    //   o.countSolutions();
-    // }
-    // catch(IllegalStateException e) {
-    //   e.printStackTrace();
-    // }
-
+    System.out.println(tr.countSolutions());
+    System.out.println(t.countSolutions());
+    try {
+      o.countSolutions();
+    }
+    catch(IllegalStateException e) {
+      e.printStackTrace();
+    }
+    System.out.println(bigg.countSolutions());
   }
 }

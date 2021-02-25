@@ -140,21 +140,16 @@ public class QueenBoard {
   }
 
   public int countSolutions(int col) { //wrapper thing
-    int tracker = 0; //track number of solutions
     if(col==board.length) { //when there is a solution return this value
       return 1;
     }
+    int tracker = 0;
     for(int i = 0; i<board.length; i++) {
       if(addQueen(i,col)) {
-        System.out.println(toString());
-        if(countSolutions(col+1)==1) {
-          removeQueen(i,col);
-          continue;
+        if(countSolutions(col+1)>0) {
+          tracker+=countSolutions(col+1);
         }
-        else {
-          removeQueen(i,col);
-          System.out.println(toString());
-        }
+        removeQueen(i,col);
       }
     }
     return tracker; //return value
