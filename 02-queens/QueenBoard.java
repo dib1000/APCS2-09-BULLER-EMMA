@@ -117,7 +117,7 @@ public class QueenBoard {
           if(solveHelper(c+1)) { //when c==board.length, return true again and end loop;
             return true;
           }
-          if(!(solveHelper(c+1))) { //if false, remove the queen
+          else { //if false, remove the queen
             removeQueen(i,c);
           }
         }
