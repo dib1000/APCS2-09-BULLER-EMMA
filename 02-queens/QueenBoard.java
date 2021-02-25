@@ -10,11 +10,21 @@ public class QueenBoard {
       for(int j = 0; j<board.length; j++) {
         if(board[i][j]>=0) {
           //is it a queen;
-          stringBoard = stringBoard + "_ ";
+          if(j==board.length-1) {
+            stringBoard = stringBoard + "_";
+          }
+          else {
+            stringBoard = stringBoard + "_ ";
+          }
         }
         else {
           //if so do this;
-          stringBoard = stringBoard + "Q ";
+          if(j==board.length-1) {
+            stringBoard = stringBoard + "Q";
+          }
+          else {
+            stringBoard = stringBoard + "Q ";
+          }
         }
       }
       stringBoard = stringBoard + "\n";
