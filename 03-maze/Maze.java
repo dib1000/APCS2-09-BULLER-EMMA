@@ -6,14 +6,18 @@ public class Maze {
   public Maze(String filename) throws FileNotFoundException {
     animate = false;
     File text = new File(filename);
-    File data = new Scanner(text);
+    Scanner data = new Scanner(text);
     ArrayList<char[]> storage = new ArrayList<char[]>();
     while(data.hasNextLine()) {
       String line = data.nextLine();
       storage.add(line.toCharArray());
     }
-    maze = storage.toArray();
+    maze = new char[storage.size()][storage.get(0).length];
+    for(int i = 0; i<maze.length; i++) {
+      maze[i] = storage.get(i);
+    }
   }
+
   private void wait(int millis){
     try {
       Thread.sleep(millis);
