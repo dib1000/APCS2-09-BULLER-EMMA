@@ -38,4 +38,16 @@ public class Maze {
     //go to top left of screen
     System.out.println("\033[1;1H");
   }
+
+  public String toString() {
+    String ezam = "";
+    for(int i = 0; i<maze.length; i++) {
+      char[] chars = maze[i];
+      for(int j = 0; j<chars.length; j++) {
+        ezam = ezam + chars[j];
+      }
+      ezam = ezam + "\n";
+    }
+    return ezam;
+  }
 }
