@@ -50,4 +50,40 @@ public class Maze {
     }
     return ezam;
   }
+
+  public int solve() {
+    if(animate) {
+      clearTerminal();
+    }
+    for(int i = 0; i<maze.length; i++) {
+      for(int j = 0; j<maze[0].length; j++) {
+        if(maze[i][j]=='S') {
+          return solve(i,j);
+        }
+      }
+    }
+    return -10;
+  }
+
+  private int solve(int row, int col) {
+    if(animate) {
+      gotoTop();
+      System.out.println(this);
+      wait(50);
+    }
+    maze[row][col] = '@';
+    if(row+1<maze.length && maze[row+1][col]==' ') {
+      return solve(row+1,col);
+    }
+    else if(row-1>-1 && maze[row-1][col]==' ') {
+      return solve(row-1,col);
+    }
+    else if(col+1<maze[row].length && maze[row][col+1]==' ') {
+      return solve(row,col+1);
+    }
+    else if(col-1>-1 && maze[row][col-1]==' ') {
+      return solve(row,col-1);
+    }
+    return -1;
+  }
 }
