@@ -72,37 +72,37 @@ public class Maze {
       wait(50);
     }
     maze[row][col] = '@';
-    if((row+1<maze.length && maze[row+1][col]=='E') ||
-       (row-1>-1 && maze[row-1][col]=='E') ||
-       (col+1<maze[0].length && maze[row][col+1]=='E') ||
-       (col-1>-1 && maze[row][col-1]=='E')) {
-         return steps+1;
+    if((maze[row+1][col]=='E') ||
+       (maze[row-1][col]=='E') ||
+       (maze[row][col+1]=='E') ||
+       (maze[row][col-1]=='E')) {
+         return steps+1; //account for start;
        }
-    else {
-      if(row+1<maze.length && maze[row+1][col]==' ') {
+    else{
+      if(maze[row+1][col]==' ') {
         return solve(row+1,col,steps+1);
       }
-      else if(row-1>-1 && maze[row-1][col]==' ') {
+      else if(maze[row-1][col]==' ') {
         return solve(row-1,col,steps+1);
       }
-      else if(col+1<maze[0].length && maze[row][col+1]==' ') {
+      else if(maze[row][col+1]==' ') {
         return solve(row,col+1,steps+1);
       }
-      else if(col-1>-1 && maze[row][col-1]==' ') {
+      else if(maze[row][col-1]==' ') {
         return solve(row,col-1,steps+1);
       }
       else {
         maze[row][col] = '.';
-        if(row+1<maze.length && maze[row+1][col]=='@') {
+        if(maze[row+1][col]=='@') {
           return solve(row+1,col,steps-1);
         }
-        else if(row-1>-1 && maze[row-1][col]=='@') {
+        else if(maze[row-1][col]=='@') {
           return solve(row-1,col,steps-1);
         }
-        else if(col+1<maze[row].length && maze[row][col+1]=='@') {
+        else if(maze[row][col+1]=='@') {
           return solve(row,col+1,steps-1);
         }
-        else if(col-1>-1 && maze[row][col-1]=='@') {
+        else if(maze[row][col-1]=='@') {
           return solve(row,col-1,steps-1);
         }
       }
