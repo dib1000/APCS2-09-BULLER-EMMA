@@ -23,8 +23,11 @@ public class MazeGenerator {
         newCol-=1;
       }
       direction.remove(index);
-      if(isBorder(maze,newRow,newCol)) {
+      if(isBorder(maze,newRow,newCol)&& maze[newRow][newCol]!=' ') {
         System.out.println(newRow + " " + newCol);
+        if(safeSquare(maze,newRow,newCol)) {
+          generate(maze,newRow,newCol);
+        }
       }
     }
   }
@@ -47,5 +50,16 @@ public class MazeGenerator {
        counter+=1;
      }
      return counter<2;
+   }
+   public static String toString(char[][]maze) {
+     String ezam = "";
+     for(int i = 0; i<maze.length; i++) {
+       char[] chars = maze[i];
+       for(int j = 0; j<chars.length; j++) {
+         ezam = ezam + chars[j];
+       }
+       ezam = ezam + "\n";
+     }
+     return ezam;
    }
 }

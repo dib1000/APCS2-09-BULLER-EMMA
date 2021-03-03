@@ -1,3 +1,4 @@
+
 public class generatorDriver {
   public static void main(String[] args) {
     char[][] maze = new char[10][10];
@@ -8,5 +9,6 @@ public class generatorDriver {
     }
     //System.out.println(MazeGenerator.isBorder(maze,10,10))
     MazeGenerator.generate(maze,1,1);
+    System.out.println(MazeGenerator.toString(maze));
   }
 }
