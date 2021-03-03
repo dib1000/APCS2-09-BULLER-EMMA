@@ -24,7 +24,6 @@ public class MazeGenerator {
       }
       direction.remove(index);
       if(isBorder(maze,newRow,newCol)&& maze[newRow][newCol]!=' ') {
-        System.out.println(newRow + " " + newCol);
         if(safeSquare(maze,newRow,newCol)) {
           generate(maze,newRow,newCol);
         }
