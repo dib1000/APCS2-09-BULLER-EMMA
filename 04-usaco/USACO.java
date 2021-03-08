@@ -16,9 +16,23 @@ public class USACO {
       }
       nums.add(num);
     }
-    for(int i = 0; i<nums.size(); i++) {
-      System.out.println(nums.get(i).toString());
+    int rows = nums.get(0).get(0);
+    int cols = nums.get(0).get(1);
+    int step = nums.get(0).get(3);
+    int[][] lake = new int[rows][cols];
+    int[][] steps = new int[step][3];
+    for(int i = 1; i<rows+1; i++) {
+      for(int j = 0; j<cols; j++) {
+        lake[i-1][j] = nums.get(i).get(j);
+      }
     }
+    for(int s = (rows+1); s<nums.size(); s++) {
+      for(int t = 0; t<3; t++) {
+        steps[s-(rows+1)][t] = nums.get(s).get(t);
+      }
+    }
+    System.out.println(Arrays.deepToString(lake));
+    System.out.println(Arrays.deepToString(steps));
     return 1;
   }
   public static int bronze(int[][] elevations, int[][] steps, int average) {
