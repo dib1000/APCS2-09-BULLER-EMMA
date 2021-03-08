@@ -1,4 +1,26 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
+
 public class USACO {
+  public static int bronze(String filename) throws FileNotFoundException {
+    File f = new File(filename);
+    Scanner in = new Scanner(f);
+    ArrayList<ArrayList<Integer>> nums = new ArrayList<ArrayList<Integer>>();
+    while(in.hasNext()) {
+      String line = in.nextLine();
+      Scanner l = new Scanner(line);
+      ArrayList<Integer> num = new ArrayList<Integer>();
+      while(l.hasNext()) {
+        num.add(l.nextInt());
+      }
+      nums.add(num);
+    }
+    for(int i = 0; i<nums.size(); i++) {
+      System.out.println(nums.get(i).toString());
+    }
+    return 1;
+  }
   public static int bronze(int[][] elevations, int[][] steps, int average) {
     int sum = 0;
     for(int s = 0; s<steps.length; s++) {
