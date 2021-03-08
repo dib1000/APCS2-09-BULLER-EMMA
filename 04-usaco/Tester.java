@@ -16,7 +16,7 @@ public class Tester {
     System.out.println();
 
     System.out.println("TESTING SILVER");
-    int[][] f = {{0,0,1,-1,0},{0,0,0,-1,0},{0,0,0,0,0},{0,0,0,0,0}};
+    long[][] f = {{0,0,1,-1,0},{0,0,0,-1,0},{0,0,0,0,0},{0,0,0,0,0}};
     System.out.println(Arrays.deepToString(f));
     System.out.println(USACO.silver(f,6,0,4));
   }

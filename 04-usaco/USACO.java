@@ -71,7 +71,8 @@ public class USACO {
     }
   }
 
-  public static int silver(int[][] field, int sec, int endRow, int endCol) {
+
+  public static long silver(long[][] field, int sec, int endRow, int endCol) {
     for(int i = 0; i<sec; i++) {
       ArrayList<Integer> vals = new ArrayList<Integer>();
       for(int r = 0; r<field.length; r++) {
@@ -92,7 +93,7 @@ public class USACO {
       return field[endRow][endCol];
     }
 
-  public static void addNeighbor(int[][] field, int row, int col) {
+  public static void addNeighbor(long[][] field, int row, int col) {
     if(row+1<field.length) {
       if(field[row+1][col]>=0) {
         field[row+1][col] += field[row][col];
