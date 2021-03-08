@@ -33,6 +33,7 @@ public class USACO {
     }
     return bronze(lake,steps,nums.get(0).get(2)); //do wrapper method
   }
+
   private static int bronze(int[][] elevations, int[][] steps, int average) {
     int sum = 0; //for the answer
     for(int s = 0; s<steps.length; s++) { //do helper method for stomp digging
@@ -68,5 +69,29 @@ public class USACO {
         }
       }
     }
+  }
+
+  public static void addNeighbor(int[][] field, int row, int col) {
+    if(row+1<field.length) {
+      if(field[row+1][col]>=0) {
+        field[row+1][col] += field[row][col];
+      }
+    }
+    if(row-1>-1) {
+      if(field[row-1][col]>=0) {
+        field[row-1][col] += field[row][col];
+      }
+    }
+    if(col+1<field[0].length) {
+      if(field[row][col+1]>=0) {
+        field[row][col+1] += field[row][col];
+      }
+    }
+    if(col-1>-1) {
+      if(field[row][col-1]>=0) {
+        field[row][col-1] += field[row][col];
+      }
+    }
+    field[row][col] = 0;
   }
 }

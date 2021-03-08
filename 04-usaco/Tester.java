@@ -13,5 +13,14 @@ public class Tester {
     //System.out.println(Arrays.deepToString(lake));
     System.out.println(USACO.bronze("lake1.input"));
     System.out.println(USACO.bronze("lake2.input"));
+    System.out.println();
+
+    System.out.println("TESTING SILVER");
+    int[][] f = {{0,0,1,-1,0},{0,0,0,-1,0},{0,0,0,0,0},{0,0,0,0,0}};
+    USACO.addNeighbor(f,0,2);
+    System.out.println(Arrays.deepToString(f));
+    USACO.addNeighbor(f,0,1);
+    USACO.addNeighbor(f,1,2);
+    System.out.println(Arrays.deepToString(f));
   }
 }
