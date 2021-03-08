@@ -17,7 +17,8 @@ public class Tester {
 
     System.out.println("TESTING SILVER");
     long[][] f = {{0,0,1,-1,0},{0,0,0,-1,0},{0,0,0,0,0},{0,0,0,0,0}};
-    System.out.println(Arrays.deepToString(f));
-    System.out.println(USACO.silver(f,6,0,4));
+    //System.out.println(Arrays.deepToString(f));
+    //System.out.println(USACO.silver(f,6,0,4));
+    System.out.println(USACO.silver("cowPath1.input"));
   }
 }

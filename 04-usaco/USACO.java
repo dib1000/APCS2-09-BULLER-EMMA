@@ -70,7 +70,29 @@ public class USACO {
       }
     }
   }
-
+  public static long silver(String filename) throws FileNotFoundException {
+    File f = new File(filename);
+    Scanner in = new Scanner(f);
+    ArrayList<String[]> inputs = new ArrayList<String[]>();
+    while(in.hasNext()) {
+      String l = in.nextLine();
+      String[] s = l.split(" ");
+      if(s.length == 1) {
+        String[] newL = new String[l.length()];
+        for(int x = 0; x<l.length(); x++) {
+          newL[x] = l.substring(x,x+1);
+        }
+        inputs.add(newL);
+      }
+      else {
+        inputs.add(s);
+      }
+    }
+    for(int i = 0; i<inputs.size(); i++) {
+      System.out.println(Arrays.toString(inputs.get(i)));
+    }
+    return 1;
+  }
 
   public static long silver(long[][] field, int sec, int endRow, int endCol) {
     for(int i = 0; i<sec; i++) {
@@ -83,7 +105,6 @@ public class USACO {
           }
         }
       }
-        System.out.println(vals);
         while(vals.size()>0) {
           addNeighbor(field,vals.get(0),vals.get(1));
           vals.remove(0);
