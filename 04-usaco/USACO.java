@@ -71,6 +71,27 @@ public class USACO {
     }
   }
 
+  public static int silver(int[][] field, int sec, int endRow, int endCol) {
+    for(int i = 0; i<sec; i++) {
+      ArrayList<Integer> vals = new ArrayList<Integer>();
+      for(int r = 0; r<field.length; r++) {
+        for(int c = 0; c<field[0].length; c++) {
+          if(field[r][c]>0) {
+            vals.add(r);
+            vals.add(c);
+          }
+        }
+      }
+        System.out.println(vals);
+        while(vals.size()>0) {
+          addNeighbor(field,vals.get(0),vals.get(1));
+          vals.remove(0);
+          vals.remove(0);
+        }
+      }
+      return field[endRow][endCol];
+    }
+
   public static void addNeighbor(int[][] field, int row, int col) {
     if(row+1<field.length) {
       if(field[row+1][col]>=0) {
