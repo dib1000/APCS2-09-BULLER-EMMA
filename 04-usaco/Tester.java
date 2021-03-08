@@ -9,8 +9,9 @@ public class Tester {
     int[][] steps = {{1,4,4},{1,1,10}};
     // USACO.stompDig(lake,1,4,4);
     // USACO.stompDig(lake,1,1,10);
-    System.out.println(USACO.bronze(lake,steps,22));
-    System.out.println(Arrays.deepToString(lake));
-    USACO.bronze("lake1.input");
+    //System.out.println(USACO.bronze(lake,steps,22));
+    //System.out.println(Arrays.deepToString(lake));
+    System.out.println(USACO.bronze("lake1.input"));
+    System.out.println(USACO.bronze("lake2.input"));
   }
 }
