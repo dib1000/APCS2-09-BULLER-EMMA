@@ -20,5 +20,7 @@ public class Tester {
     //System.out.println(Arrays.deepToString(f));
     //System.out.println(USACO.silver(f,6,0,4));
     System.out.println(USACO.silver("cowPath1.input"));
+    System.out.println(USACO.silver("cowPath2.input"));
+    System.out.println(USACO.silver("cowPath3.input"));
   }
 }

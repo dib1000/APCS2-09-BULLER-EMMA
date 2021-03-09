@@ -108,8 +108,9 @@ public class USACO {
         }
       }
     }
-    System.out.println(Arrays.deepToString(field));
-    return 1;
+    return silver(field, Integer.valueOf(inputs.get(0)[2]),
+                  Integer.valueOf(inputs.get(rows+1)[2])-1,
+                  Integer.valueOf(inputs.get(rows+1)[3])-1);
   }
 
   public static long silver(long[][] field, int sec, int endRow, int endCol) {
