@@ -88,9 +88,27 @@ public class USACO {
         inputs.add(s);
       }
     }
-    for(int i = 0; i<inputs.size(); i++) {
-      System.out.println(Arrays.toString(inputs.get(i)));
+    int rows = Integer.valueOf(inputs.get(0)[0]);
+    int cols = Integer.valueOf(inputs.get(0)[1]);
+    long[][] field = new long[rows][cols];
+    int startRow = Integer.valueOf(inputs.get(rows+1)[0])-1;
+    int startCol = Integer.valueOf(inputs.get(rows+1)[1])-1;
+    for(int i = 0; i<field.length; i++) {
+      for(int j = 0; j<field[0].length; j++) {
+        if(inputs.get(i+1)[j].equals("*")) {
+          field[i][j] = -1;
+        }
+        if(inputs.get(i+1)[j].equals(".")) {
+          if(i==startRow && j==startCol) {
+            field[i][j] = 1;
+          }
+          else {
+            field[i][j] = 0;
+          }
+        }
+      }
     }
+    System.out.println(Arrays.deepToString(field));
     return 1;
   }
 
