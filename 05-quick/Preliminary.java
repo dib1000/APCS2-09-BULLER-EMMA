@@ -19,8 +19,18 @@ public class Preliminary {
         greater-=1;
       }
     }
-    System.out.println(current + "," + greater);
     System.out.println(Arrays.toString(data));
-    return 35;
+    int vStart = data[start];
+    if(data[start]<data[current]) {
+      current-=1;
+      data[start] = data[current];
+      data[current] = vStart;
+    }
+    else if(data[start]>data[current]) {
+      data[start] = data[current];
+      data[current] = vStart;
+    }
+    System.out.println(Arrays.toString(data));
+    return current;
    }
 }
