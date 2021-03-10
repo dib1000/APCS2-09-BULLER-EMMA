@@ -18,6 +18,18 @@ public class Preliminary {
         data[current] = swap;
         greater-=1;
       }
+      else {
+        double ran = Math.random();
+        if(ran<=0.5) {
+          current+=1;
+        }
+        else {
+          int swaps = data[greater];
+          data[greater] = data[current];
+          data[current] = swaps;
+          greater-=1;
+        }
+      }
     }
     System.out.println(Arrays.toString(data));
     int vStart = data[start];
@@ -29,6 +41,17 @@ public class Preliminary {
     else if(data[start]>data[current]) {
       data[start] = data[current];
       data[current] = vStart;
+    }
+    else {
+      if(Math.random()<=0.5) {
+        current -= 1;
+        data[start] = data[current];
+        data[current] = vStart;
+      }
+      else {
+        data[start] = data[current];
+        data[current] = vStart;
+      }
     }
     System.out.println(Arrays.toString(data));
     return current;
