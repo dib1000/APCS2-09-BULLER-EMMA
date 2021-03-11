@@ -6,6 +6,7 @@ public class Tester {
     System.out.println(Preliminary.partition(data,3,3));
     System.out.println(Preliminary.partition(data,3,7));
     System.out.println(Preliminary.partition(doubles,3,8));
-    System.out.println(Preliminary.partition(numbers,0,9));
+    System.out.println(Preliminary.partition(numbers,1,2));
+    System.out.println(Preliminary.partition(numbers,0,6));
   }
 }
