@@ -33,6 +33,9 @@ public class Preliminary {
     }
     System.out.println(Arrays.toString(data));
     int vStart = data[start];
+    if(current==start+1) {
+      return current;
+    }
     if(data[start]<data[current]) {
       current-=1;
       data[start] = data[current];
