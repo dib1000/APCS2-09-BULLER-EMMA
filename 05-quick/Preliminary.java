@@ -4,10 +4,21 @@ public class Preliminary {
     if(start==end) {
       return start;
     }
-    int random = ((int)(Math.random() * (end-start))) + start;
-    int storage = data[start];
-    data[start] = data[random];
-    data[random] = storage;
+    int mid = (end-start)/2 + start;
+    int pivot = 0;
+    if((data[start]<=data[mid] && data[mid]<=data[end]) || (data[start]>=data[mid] && data[mid]>=data[end])) {
+      pivot = mid;
+    }
+    else if ((data[start]>=data[mid] && data[start]<=data[end]) || (data[start]<=data[mid] && data[start]>=data[end])) {
+      pivot = start;
+    }
+    else {
+      pivot = end;
+    }
+    int storage = data[pivot];
+    data[pivot] = data[start];
+    data[start] = storage;
+    System.out.println(Arrays.toString(data));
     int current = start+1;
     int greater = end;
     while(current<greater) {
@@ -33,6 +44,7 @@ public class Preliminary {
         }
       }
     }
+    System.out.println(Arrays.toString(data));
     int vStart = data[start];
     if(data[start]<data[current]) {
       current-=1;
@@ -54,6 +66,7 @@ public class Preliminary {
         data[current] = vStart;
       }
     }
+    System.out.println(Arrays.toString(data));
     return current;
    }
 }
