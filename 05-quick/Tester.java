@@ -1,3 +1,4 @@
+import java.util.*;
 public class Tester {
   public static void main(String[] args) {
     int[] data = {999,999,999,4,3,2,1,0,999,999,999};
@@ -5,9 +6,14 @@ public class Tester {
     int[] numbers = {5,6,3,2,9,18,43,58,23,82};
     int[] piv = {9,-3,5,2,6,8,-6,1,3};
     int[] ary = {2, 10, 15, 23, 0, 5};
-    int[] same = new int[1000000];
+    int[] x = {9,-3,5,2,6,8,-6,1,3};
+    int[] same = new int[3000000];
     for(int i = 0; i<same.length; i++) {
       same[i] = (int)(Math.random()*100);
+    }
+    int[] zeros = new int[3000000];
+    for(int j = 0; j<zeros.length; j++) {
+      zeros[j] = 0;
     }
     System.out.println(Preliminary.partition(data,3,3));
     System.out.println(Preliminary.partition(data,3,7));
@@ -17,6 +23,9 @@ public class Tester {
     System.out.println(Quick.quickselect(piv,0));
     System.out.println(Quick.quickselect(ary,4));
     System.out.println(Quick.quickselect(doubles,7));
-    System.out.println(Quick.quickselect(same,764434));
+    //System.out.println(Quick.quickselect(same,999999));
+    //System.out.println(Quick.quickselect(zeros,765844));
+    //System.out.println(Arrays.toString(same));
+    Quick.quicksort(x);
   }
 }

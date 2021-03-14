@@ -20,4 +20,20 @@ public class Quick {
     }
     return data[k];
   }
+
+  public static void quicksort(int[] data) {
+    quicksort(data,0,data.length-1);
+  }
+
+  public static void quicksort(int[] data, int start, int end) {
+      int part = Preliminary.partition(data,start,end);
+      System.out.println(Arrays.toString(data));
+      System.out.println(part);
+      if(part!=start) {
+        quicksort(data,start,part-1);
+      }
+      if(part!=end) {
+        quicksort(data,part+1,end);
+    }
+  }
 }
