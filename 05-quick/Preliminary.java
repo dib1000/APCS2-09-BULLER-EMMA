@@ -4,19 +4,9 @@ public class Preliminary {
     if(start==end) {
       return start;
     }
-    int mid = (end-start)/2 + start;
-    int pivot = 0;
-    if((data[start]<=data[mid] && data[mid]<=data[end]) || (data[start]>=data[mid] && data[mid]>=data[end])) {
-      pivot = mid;
-    }
-    else if ((data[start]>=data[mid] && data[start]<=data[end]) || (data[start]<=data[mid] && data[start]>=data[end])) {
-      pivot = start;
-    }
-    else {
-      pivot = end;
-    }
-    int storage = data[pivot];
-    data[pivot] = data[start];
+    int random = ((int)(Math.random() * (end-start))) + start;
+    int storage = data[random];
+    data[random] = data[start];
     data[start] = storage;
     System.out.println(Arrays.toString(data));
     int current = start+1;
