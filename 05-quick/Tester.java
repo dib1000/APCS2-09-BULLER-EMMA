@@ -5,6 +5,10 @@ public class Tester {
     int[] numbers = {5,6,3,2,9,18,43,58,23,82};
     int[] piv = {9,-3,5,2,6,8,-6,1,3};
     int[] ary = {2, 10, 15, 23, 0, 5};
+    int[] same = new int[1000000];
+    for(int i = 0; i<same.length; i++) {
+      same[i] = (int)(Math.random()*100);
+    }
     System.out.println(Preliminary.partition(data,3,3));
     System.out.println(Preliminary.partition(data,3,7));
     System.out.println(Preliminary.partition(doubles,3,8));
@@ -12,5 +16,7 @@ public class Tester {
     System.out.println(Preliminary.partition(numbers,0,6));
     System.out.println(Quick.quickselect(piv,0));
     System.out.println(Quick.quickselect(ary,4));
+    System.out.println(Quick.quickselect(doubles,7));
+    System.out.println(Quick.quickselect(same,764434));
   }
 }

@@ -8,7 +8,7 @@ public class Preliminary {
     int storage = data[random];
     data[random] = data[start];
     data[start] = storage;
-    System.out.println(Arrays.toString(data));
+    //System.out.println(Arrays.toString(data));
     int current = start+1;
     int greater = end;
     while(current<greater) {
@@ -34,7 +34,7 @@ public class Preliminary {
         }
       }
     }
-    System.out.println(Arrays.toString(data));
+    //System.out.println(Arrays.toString(data));
     int vStart = data[start];
     if(data[start]<data[current]) {
       current-=1;
@@ -56,7 +56,7 @@ public class Preliminary {
         data[current] = vStart;
       }
     }
-    System.out.println(Arrays.toString(data));
+  //System.out.println(Arrays.toString(data));
     return current;
    }
 }

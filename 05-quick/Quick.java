@@ -5,7 +5,7 @@ public class Quick {
     int end = data.length-1;
     while(start!=k || end!=k) {
       int part = Preliminary.partition(data,start,end);
-      System.out.println(part);
+      //System.out.println(part);
       if(part==k) {
         start = k;
         end = k;
@@ -16,7 +16,7 @@ public class Quick {
       else {
         start = part+1;
       }
-      System.out.println(start + " " + end);
+      //System.out.println(start + " " + end);
     }
     return data[k];
   }
