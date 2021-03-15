@@ -4,7 +4,7 @@ public class Preliminary {
     if(start==end) {
       return start;
     }
-    int random = ((int)(Math.random() * (end-start))) + start;
+    int random = (int)((Math.random() * (end-start)) + start);
     int storage = data[random];
     data[random] = data[start];
     data[start] = storage;
@@ -22,8 +22,7 @@ public class Preliminary {
         greater-=1;
       }
       else {
-        double ran = Math.random();
-        if(ran<=0.5) {
+        if(Math.random()<=0.5) {
           current+=1;
         }
         else {

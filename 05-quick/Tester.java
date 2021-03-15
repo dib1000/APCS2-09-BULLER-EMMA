@@ -27,5 +27,18 @@ public class Tester {
     //System.out.println(Quick.quickselect(zeros,765844));
     //System.out.println(Arrays.toString(same));
     Quick.quicksort(x);
+    long start = System.currentTimeMillis();
+    Quick.quicksort(zeros);
+    double quickTime = (System.currentTimeMillis()-start)/1000.0;
+
+    start = System.currentTimeMillis();
+    Arrays.sort(zeros);
+    double builtinTime = (System.currentTimeMillis()-start)/1000.0;
+    start = System.currentTimeMillis();
+    Quick.quicksort(same);
+    double ranTime = (System.currentTimeMillis()-start)/1000.0;
+    System.out.println(quickTime);
+    System.out.println(builtinTime);
+    System.out.println(ranTime);
   }
 }

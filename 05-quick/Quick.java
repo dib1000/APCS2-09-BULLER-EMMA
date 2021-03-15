@@ -26,14 +26,16 @@ public class Quick {
   }
 
   public static void quicksort(int[] data, int start, int end) {
+    if(start!=end) {
       int part = Preliminary.partition(data,start,end);
-      System.out.println(Arrays.toString(data));
-      System.out.println(part);
-      if(part!=start) {
+      //System.out.println(Arrays.toString(data));
+      //System.out.println(part);
+      if(!(part==start)) {
         quicksort(data,start,part-1);
       }
-      if(part!=end) {
+      if(!(part==end)) {
         quicksort(data,part+1,end);
+    }
     }
   }
 }
