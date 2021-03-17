@@ -71,42 +71,29 @@ public class Maze {
       System.out.println(this);
       wait(50);
     }
-    maze[row][col] = '@';
-    if((maze[row+1][col]=='E') ||
-       (maze[row-1][col]=='E') ||
-       (maze[row][col+1]=='E') ||
-       (maze[row][col-1]=='E')) {
-         return steps+1; //account for start;
-       }
-    else{
-      if(maze[row+1][col]==' ') {
-        return solve(row+1,col,steps+1);
-      }
-      else if(maze[row-1][col]==' ') {
-        return solve(row-1,col,steps+1);
-      }
-      else if(maze[row][col+1]==' ') {
-        return solve(row,col+1,steps+1);
-      }
-      else if(maze[row][col-1]==' ') {
-        return solve(row,col-1,steps+1);
-      }
-      else {
-        maze[row][col] = '.';
-        if(maze[row+1][col]=='@' && maze[row+1][col]!='E') {
-          return solve((row+1),col,steps-1);
-        }
-        else if(maze[row-1][col]=='@' && maze[row-1][col]!='E') {
-          return solve(row-1,col,steps-1);
-        }
-        else if(maze[row][col+1]=='@' && maze[row][col+1]!='E') {
-          return solve(row,col+1,steps-1);
-        }
-        else if(maze[row][col-1]=='@' && maze[row][col-1]!='E') {
-          return solve(row,col-1,steps-1);
-        }
-      }
+    if(maze[row][col]=='E') {
+      return steps+1;
     }
-    return -1;
+    if(maze[row][col]=='.' || maze[row][col]=='#' || maze[row][col]=='@') {
+      return -1;
+    }
+    if(maze[row][col]=='S' || maze[row][col]==' ') {
+      maze[row][col] = '@';
+      if(solve(row+1,col,steps+1)!=-1) {
+        return steps;
+      }
+      if(solve(row-1,col,steps+1)!=-1) {
+        return steps;
+      }
+      if(solve(row,col+1,steps+1)!=-1) {
+        return steps;
+      }
+      if(solve(row,col-1,steps+1)!=-1) {
+        return steps;
+      }
+      maze[row][col] = '.';
+      return -1;
+    }
+    return steps;
   }
 }
