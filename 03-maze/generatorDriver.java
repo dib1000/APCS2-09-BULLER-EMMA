@@ -8,7 +8,7 @@ public class generatorDriver {
       }
     }
     //System.out.println(MazeGenerator.isBorder(maze,10,10))
-    MazeGenerator.generate(maze,1,1);
+    MazeGenerator.generate(maze,5,5);
     System.out.println(MazeGenerator.toString(maze));
   }
 }
