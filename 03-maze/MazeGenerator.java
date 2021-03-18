@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class MazeGenerator {
-  public static void generate(char[][]maze,int startrow, int startcol) {
+  public static void generate(char[][]maze,int startrow,int startcol) {
     maze[startrow][startcol] = ' ';
     ArrayList<String> direction = new ArrayList<String>(Arrays.asList(new String[]{"N","S","W","E"}));
     for(int i = 0; i<4; i++) {
