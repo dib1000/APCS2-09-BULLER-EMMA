@@ -9,22 +9,26 @@ public class Merge {
     if((hi-lo)%2==0) {
       int[] a = new int[median];
       int[] b = new int[median];
-      for(int i = lo; i<median; i++) {
-        a[i] = data[i];
+      for(int i = lo; i<lo+median; i++) {
+        a[i-lo] = data[i];
       }
-      for(int j = median; j<hi; j++) {
-        b[j] = data[j];
+      for(int j = (lo+median); j<hi; j++) {
+        b[j-(lo+median)] = data[j];
       }
+      System.out.println(Arrays.toString(a));
+      System.out.println(Arrays.toString(b));
     }
     else {
       int[] a = new int[median+1];
       int[] b = new int[median];
-      for(int i = lo; i<median; i++) {
-        a[i] = data[i];
+      for(int i = lo; i<lo+median+1; i++) {
+        a[i-lo] = data[i];
       }
-      for(int j = median; j<hi; j++) {
-        b[j] = data[j];
+      for(int j = (lo+median+1); j<hi; j++) {
+        b[j-(lo+median+1)] = data[j];
       }
+      System.out.println(Arrays.toString(a));
+      System.out.println(Arrays.toString(b));
     }
   }
 }
