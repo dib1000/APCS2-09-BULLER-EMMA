@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class MazeGenerator {
-  public static void generate(char[][]maze,int startrow,int startcol) {
+  public static void generate(char[][]maze,int rows, int cols,int startrow,int startcol) {
     if(maze[0].length>2 && maze.length>2 && isBorder(maze,startrow,startcol)) {
       maze[startrow][startcol] = ' ';
       ArrayList<String> direction = new ArrayList<String>(Arrays.asList(new String[]{"N","S","W","E"}));
@@ -26,7 +26,7 @@ public class MazeGenerator {
         direction.remove(index);
         if(isBorder(maze,newRow,newCol)&& maze[newRow][newCol]!=' ') {
           if(safeSquare(maze,newRow,newCol)) {
-            generate(maze,newRow,newCol);
+            generate(maze,rows,cols,newRow,newCol);
           }
         }
       }
