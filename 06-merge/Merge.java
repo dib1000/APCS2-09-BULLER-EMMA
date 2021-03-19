@@ -72,8 +72,8 @@ public class Merge {
             ex++;
           }
         }
-        System.out.println(Arrays.toString(temp));
-        System.out.println(start+" "+ex+" "+index);
+        //System.out.println(Arrays.toString(temp));
+        //System.out.println(start+" "+ex+" "+index);
         //System.out.println(data[start]+" "+data[ex]);
       }
     }
