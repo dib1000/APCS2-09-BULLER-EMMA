@@ -100,9 +100,15 @@ public class MyDeque<E>{
     return element;
   }
   public E getFirst() {
+    if(size==0) {
+      throw new NoSuchElementException("There are no elements to get from the list");
+    }
     return data[start];
   }
   public E getLast() {
+    if(size==0) {
+      throw new NoSuchElementException("There are no elements to get from the list");
+    }
     return data[end];
   }
 }

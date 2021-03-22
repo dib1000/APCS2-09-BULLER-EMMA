@@ -76,5 +76,17 @@ public class Tester {
     catch(NoSuchElementException e) {
       e.printStackTrace();
     }
+    try {
+      z.getFirst();
+    }
+    catch(NoSuchElementException e) {
+      e.printStackTrace();
+    }
+    try {
+      n.getLast();
+    }
+    catch(NoSuchElementException e) {
+      e.printStackTrace();
+    }
   }
 }
