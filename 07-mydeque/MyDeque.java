@@ -48,6 +48,9 @@ public class MyDeque<E>{
     return deque + "}";
   }
   public void addFirst(E element) {
+    if(element==null) {
+      throw new NullPointerException("Can't add null elements to deque");
+    }
     if(size==0) {
       data[start] = element;
     }
@@ -61,6 +64,9 @@ public class MyDeque<E>{
     size++;
   }
   public void addLast(E element) {
+    if(element==null) {
+      throw new NullPointerException("Can't add null elements to deque");
+    }
     if(size==0) {
       data[end] = element;
     }
@@ -75,7 +81,7 @@ public class MyDeque<E>{
   }
   public E removeFirst() {
     if(size==0) {
-      throw new NoSuchElementException("There are no elements to remove from the list");
+      throw new NoSuchElementException("There are no elements to remove from the deque");
     }
     E element = data[start];
     data[start] = null;
@@ -88,7 +94,7 @@ public class MyDeque<E>{
   }
   public E removeLast() {
     if(size==0) {
-      throw new NoSuchElementException("There are no elements to remove from the list");
+      throw new NoSuchElementException("There are no elements to remove from the deque");
     }
     E element = data[end];
     data[end] = null;
@@ -101,13 +107,13 @@ public class MyDeque<E>{
   }
   public E getFirst() {
     if(size==0) {
-      throw new NoSuchElementException("There are no elements to get from the list");
+      throw new NoSuchElementException("There are no elements to get from the deque");
     }
     return data[start];
   }
   public E getLast() {
     if(size==0) {
-      throw new NoSuchElementException("There are no elements to get from the list");
+      throw new NoSuchElementException("There are no elements to get from the deque");
     }
     return data[end];
   }

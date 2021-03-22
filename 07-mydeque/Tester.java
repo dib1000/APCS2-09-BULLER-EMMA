@@ -88,5 +88,17 @@ public class Tester {
     catch(NoSuchElementException e) {
       e.printStackTrace();
     }
+    try {
+      d.addFirst(null);
+    }
+    catch(NullPointerException e) {
+      e.printStackTrace();
+    }
+    try {
+      ex.addLast(null);
+    }
+    catch(NullPointerException e) {
+      e.printStackTrace();
+    }
   }
 }
