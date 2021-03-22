@@ -4,6 +4,7 @@ public class Tester {
     MyDeque b = new MyDeque(100);
     MyDeque z = new MyDeque(0);
     MyDeque n = new MyDeque(-1);
+    MyDeque ex = new MyDeque(5);
     System.out.println(d.size());
     System.out.println(b.size());
     System.out.println(z.size());
@@ -20,5 +21,18 @@ public class Tester {
     System.out.println(d.getFirst());
     System.out.println(d.getLast());
     System.out.println(d.toString());
+    b.addLast("FIRST");
+    System.out.println(b.getFirst());
+    System.out.println(b.getLast());
+    System.out.println(b.toString());
+
+    System.out.println();
+    ex.addLast(1);
+    ex.addLast(2);
+    ex.addLast(3);
+    ex.addLast(4);
+    System.out.println(ex.getFirst());
+    System.out.println(ex.getLast());
+    System.out.println(ex.toString());
   }
 }

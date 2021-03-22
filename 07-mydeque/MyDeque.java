@@ -31,14 +31,19 @@ public class MyDeque<E>{
     }
     String deque = "{";
     int lo = start;
-    while(lo!=end) {
+    while(lo!=end+1) {
       if(lo==data.length) {
         lo = 0;
       }
-      deque = deque + data[lo] + ", ";
+      if(lo==end) {
+        deque = deque + data[lo];
+      }
+      else {
+        deque = deque + data[lo] + ", ";
+      }
       lo++;
     }
-    return deque + data[end] + "}";
+    return deque + "}";
   }
   public void addFirst(E element) {
     if(size==0) {
@@ -53,7 +58,19 @@ public class MyDeque<E>{
     }
     size++;
   }
-  public void addLast(E element){ }
+  public void addLast(E element) {
+    if(size==0) {
+      data[end] = element;
+    }
+    else {
+      end++;
+      if(end==data.length) {
+        end = 0;
+      }
+      data[end] = element;
+    }
+    size++;
+  }
   // public E removeFirst()
   // public E removeLast()
   public E getFirst() {
