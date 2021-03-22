@@ -10,5 +10,15 @@ public class Tester {
     System.out.println(n.size());
     System.out.println(b.toString());
     System.out.println(n.toString());
+    d.addFirst("a"); //5
+    d.addFirst("b"); //4
+    d.addFirst("c"); //3
+    d.addFirst("d"); //2
+    d.addFirst("e"); //1
+    d.addFirst("f"); //0
+    d.addFirst("g"); //
+    System.out.println(d.getFirst());
+    System.out.println(d.getLast());
+    System.out.println(d.toString());
   }
 }

@@ -40,7 +40,19 @@ public class MyDeque<E>{
     }
     return deque + data[end] + "}";
   }
-  public void addFirst(E element){ }
+  public void addFirst(E element) {
+    if(size==0) {
+      data[start] = element;
+    }
+    else {
+      start-=1;
+      if(start<0) {
+        start = data.length-1;
+      }
+      data[start] = element;
+    }
+    size++;
+  }
   public void addLast(E element){ }
   // public E removeFirst()
   // public E removeLast()
