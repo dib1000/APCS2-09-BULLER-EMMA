@@ -43,9 +43,19 @@ public class Tester {
     System.out.println(d.getLast());
     System.out.println(d.size());
     System.out.println(d.toString());
+    System.out.println(d.removeLast());
+    System.out.println(d.getFirst());
+    System.out.println(d.getLast());
+    System.out.println(d.size());
+    System.out.println(d.toString());
 
     System.out.println();
     System.out.println(ex.removeFirst());
+    System.out.println(ex.getFirst());
+    System.out.println(ex.getLast());
+    System.out.println(ex.size());
+    System.out.println(ex.toString());
+    System.out.println(ex.removeLast());
     System.out.println(ex.getFirst());
     System.out.println(ex.getLast());
     System.out.println(ex.size());
