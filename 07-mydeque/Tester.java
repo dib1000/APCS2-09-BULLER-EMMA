@@ -20,10 +20,12 @@ public class Tester {
     d.addFirst("g"); //
     System.out.println(d.getFirst());
     System.out.println(d.getLast());
+    System.out.println(d.size());
     System.out.println(d.toString());
     b.addLast("FIRST");
     System.out.println(b.getFirst());
     System.out.println(b.getLast());
+    System.out.println(b.size());
     System.out.println(b.toString());
 
     System.out.println();
@@ -33,6 +35,20 @@ public class Tester {
     ex.addLast(4);
     System.out.println(ex.getFirst());
     System.out.println(ex.getLast());
+    System.out.println(ex.toString());
+
+    System.out.println();
+    System.out.println(d.removeFirst());
+    System.out.println(d.getFirst());
+    System.out.println(d.getLast());
+    System.out.println(d.size());
+    System.out.println(d.toString());
+
+    System.out.println();
+    System.out.println(ex.removeFirst());
+    System.out.println(ex.getFirst());
+    System.out.println(ex.getLast());
+    System.out.println(ex.size());
     System.out.println(ex.toString());
   }
 }
