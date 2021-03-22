@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Tester {
   public static void main(String[] args) {
     MyDeque d = new MyDeque();
@@ -60,5 +62,19 @@ public class Tester {
     System.out.println(ex.getLast());
     System.out.println(ex.size());
     System.out.println(ex.toString());
+
+    System.out.println();
+    try {
+      z.removeFirst();
+    }
+    catch(NoSuchElementException e) {
+      e.printStackTrace();
+    }
+    try {
+      n.removeLast();
+    }
+    catch(NoSuchElementException e) {
+      e.printStackTrace();
+    }
   }
 }

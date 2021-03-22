@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class MyDeque<E>{
   private E[] data;
   private int size, start, end;
@@ -72,6 +74,9 @@ public class MyDeque<E>{
     size++;
   }
   public E removeFirst() {
+    if(size==0) {
+      throw new NoSuchElementException("There are no elements to remove from the list");
+    }
     E element = data[start];
     data[start] = null;
     start+=1;
@@ -82,6 +87,9 @@ public class MyDeque<E>{
     return element;
   }
   public E removeLast() {
+    if(size==0) {
+      throw new NoSuchElementException("There are no elements to remove from the list");
+    }
     E element = data[end];
     data[end] = null;
     end-=1;
