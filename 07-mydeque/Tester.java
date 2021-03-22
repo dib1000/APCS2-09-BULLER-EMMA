@@ -8,5 +8,7 @@ public class Tester {
     System.out.println(b.size());
     System.out.println(z.size());
     System.out.println(n.size());
+    System.out.println(b.toString());
+    System.out.println(n.toString());
   }
 }

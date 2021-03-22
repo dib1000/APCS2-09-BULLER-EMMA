@@ -26,12 +26,28 @@ public class MyDeque<E>{
     return size;
   }
   public String toString() {
-    return "";
+    if (size==0) {
+      return "{}";
+    }
+    String deque = "{";
+    int lo = start;
+    while(lo!=end) {
+      if(lo==data.length) {
+        lo = 0;
+      }
+      deque = deque + data[lo] + ", ";
+      lo++;
+    }
+    return deque + data[end] + "}";
   }
   public void addFirst(E element){ }
   public void addLast(E element){ }
   // public E removeFirst()
   // public E removeLast()
-  // public E getFirst()
-  // public E getLast()
+  public E getFirst() {
+    return data[start];
+  }
+  public E getLast() {
+    return data[end];
+  }
 }
