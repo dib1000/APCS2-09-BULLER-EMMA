@@ -23,7 +23,7 @@ public class MyDeque<E>{
     end = median;
   }
   public int size() {
-    return data.length;
+    return size;
   }
   public String toString() {
     return "";
