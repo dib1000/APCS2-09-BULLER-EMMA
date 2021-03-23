@@ -51,7 +51,11 @@ public class MyDeque<E>{
     if(element==null) {
       throw new NullPointerException("Can't add null elements to deque");
     }
-    if(size==0) {
+    size++;
+    if(size>data.length) {
+      resize();
+    }
+    if(size==1) {
       data[start] = element;
     }
     else {
@@ -61,7 +65,6 @@ public class MyDeque<E>{
       }
       data[start] = element;
     }
-    size++;
   }
   public void addLast(E element) {
     if(element==null) {
@@ -116,5 +119,31 @@ public class MyDeque<E>{
       throw new NoSuchElementException("There are no elements to get from the deque");
     }
     return data[end];
+  }
+  @SuppressWarnings("unchecked")
+  private void resize() {
+    if(size==1) {
+      data = (E[]) new Object[10];
+      start = 5;
+      end = 5;
+    }
+    else {
+      E[] d = (E[]) new Object[size*2];
+      int index = 0;
+      int oldDeque = start;
+      int newDeque = data.length/2;
+      while(index<data.length) {
+        d[newDeque] = data[oldDeque];
+        oldDeque++;
+        if(oldDeque==data.length) {
+          oldDeque = 0;
+        }
+        newDeque++;
+        index++;
+      }
+      start = data.length/2;
+      end = data.length/2 + data.length - 1;
+      data = d;
+    }
   }
 }

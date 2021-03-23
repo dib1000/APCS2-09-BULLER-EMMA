@@ -100,5 +100,21 @@ public class Tester {
     catch(NullPointerException e) {
       e.printStackTrace();
     }
+
+    System.out.println();
+    z.addFirst(34.23);
+    System.out.println(z.size());
+    System.out.println(z.getFirst());
+    System.out.println(z.getLast());
+    System.out.println(z.toString());
+    System.out.println();
+    ex.addFirst("a");
+    ex.addFirst("b");
+    ex.addFirst("c");
+    ex.addFirst("d");
+    System.out.println(ex.getFirst());
+    System.out.println(ex.getLast());
+    System.out.println(ex.size());
+    System.out.println(ex.toString());
   }
 }
