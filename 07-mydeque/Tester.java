@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class Tester {
+  @SuppressWarnings("unchecked")
   public static void main(String[] args) {
     MyDeque d = new MyDeque();
     MyDeque b = new MyDeque(100);

@@ -29,7 +29,6 @@ public class MyDeque<E>{
   public int size() {
     return size;
   }
-  @SuppressWarnings("unchecked")
   public String toString() {
     if (size==0) {
       return "{}";
@@ -52,7 +51,6 @@ public class MyDeque<E>{
     }
     return deque + "}";
   }
-  @SuppressWarnings("unchecked")
   public void addFirst(E element) {
     if(element==null) {
       throw new NullPointerException("Can't add null elements to deque");
@@ -72,7 +70,6 @@ public class MyDeque<E>{
       data[start] = element;
     }
   }
-  @SuppressWarnings("unchecked")
   public void addLast(E element) {
     if(element==null) {
       throw new NullPointerException("Can't add null elements to deque");
@@ -92,7 +89,6 @@ public class MyDeque<E>{
       data[end] = element;
     }
   }
-  @SuppressWarnings("unchecked")
   public E removeFirst() {
     if(size==0) {
       throw new NoSuchElementException("There are no elements to remove from the deque");
@@ -108,7 +104,6 @@ public class MyDeque<E>{
     size--;
     return element;
   }
-  @SuppressWarnings("unchecked")
   public E removeLast() {
     if(size==0) {
       throw new NoSuchElementException("There are no elements to remove from the deque");
@@ -124,14 +119,12 @@ public class MyDeque<E>{
     size--;
     return element;
   }
-  @SuppressWarnings("unchecked")
   public E getFirst() {
     if(size==0) {
       throw new NoSuchElementException("There are no elements to get from the deque");
     }
     return data[start];
   }
-  @SuppressWarnings("unchecked")
   public E getLast() {
     if(size==0) {
       throw new NoSuchElementException("There are no elements to get from the deque");
