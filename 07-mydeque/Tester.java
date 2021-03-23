@@ -111,6 +111,9 @@ public class Tester {
     ex.addFirst("a");
     ex.addFirst("b");
     ex.addFirst("c");
+    System.out.println(ex.getFirst());
+    System.out.println(ex.getLast());
+    System.out.println(ex.toString());
     ex.addFirst("d");
     System.out.println(ex.getFirst());
     System.out.println(ex.getLast());
@@ -145,10 +148,25 @@ public class Tester {
     d.addLast(3);
     d.addLast(4);
     d.addLast(5);
+    System.out.println(d.getFirst());
+    System.out.println(d.getLast());
+    System.out.println(d.toString());
     d.addLast(6);
     System.out.println(d.getFirst());
     System.out.println(d.getLast());
     System.out.println(d.size());
     System.out.println(d.toString());
+
+    System.out.println();
+    n.addFirst(1);
+    n.addFirst(1);
+    n.addFirst(1);
+    n.addFirst(1);
+    n.addFirst(1);
+    n.addFirst(1);
+    n.addFirst(1);
+    n.addFirst(1);
+    n.addFirst(1);
+    System.out.println(n.toString());
   }
 }

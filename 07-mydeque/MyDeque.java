@@ -4,6 +4,7 @@ public class MyDeque<E>{
   private E[] data;
   private int size, start, end;
 
+  @SuppressWarnings("unchecked")
   public MyDeque() {
     @SuppressWarnings("unchecked")
     E[] d = (E[]) new Object[10];
@@ -12,6 +13,7 @@ public class MyDeque<E>{
     start = 5;
     end = 5;
   }
+  @SuppressWarnings("unchecked")
   public MyDeque(int initialCapacity) {
     if(initialCapacity<0) {
       initialCapacity = 0;
@@ -25,28 +27,34 @@ public class MyDeque<E>{
     end = median;
   }
   public int size() {
+    System.out.println(start);
+    System.out.println(end);
     return size;
   }
+  @SuppressWarnings("unchecked")
   public String toString() {
     if (size==0) {
       return "{}";
     }
     String deque = "{";
+    int index = 0;
     int lo = start;
-    while(lo!=end+1) {
-      if(lo==data.length) {
-        lo = 0;
-      }
-      if(lo==end) {
+    while(index<size) {
+      if(index==size-1) {
         deque = deque + data[lo];
       }
       else {
         deque = deque + data[lo] + ", ";
       }
       lo++;
+      if(lo==data.length) {
+        lo = 0;
+      }
+      index++;
     }
     return deque + "}";
   }
+  @SuppressWarnings("unchecked")
   public void addFirst(E element) {
     if(element==null) {
       throw new NullPointerException("Can't add null elements to deque");
@@ -66,6 +74,7 @@ public class MyDeque<E>{
       data[start] = element;
     }
   }
+  @SuppressWarnings("unchecked")
   public void addLast(E element) {
     if(element==null) {
       throw new NullPointerException("Can't add null elements to deque");
@@ -85,6 +94,7 @@ public class MyDeque<E>{
       data[end] = element;
     }
   }
+  @SuppressWarnings("unchecked")
   public E removeFirst() {
     if(size==0) {
       throw new NoSuchElementException("There are no elements to remove from the deque");
@@ -100,6 +110,7 @@ public class MyDeque<E>{
     size--;
     return element;
   }
+  @SuppressWarnings("unchecked")
   public E removeLast() {
     if(size==0) {
       throw new NoSuchElementException("There are no elements to remove from the deque");
@@ -115,12 +126,14 @@ public class MyDeque<E>{
     size--;
     return element;
   }
+  @SuppressWarnings("unchecked")
   public E getFirst() {
     if(size==0) {
       throw new NoSuchElementException("There are no elements to get from the deque");
     }
     return data[start];
   }
+  @SuppressWarnings("unchecked")
   public E getLast() {
     if(size==0) {
       throw new NoSuchElementException("There are no elements to get from the deque");
