@@ -1,6 +1,8 @@
+import java.util.*;
 public class Calculator {
   public static double eval(String s) {
     String[] operators = s.split(" ");
+    ArrayDeque vals = new ArrayDeque();
     for(int i = 0; i<operators.length; i++) {
       System.out.println(operators[i]);
     }
