@@ -1,5 +1,6 @@
 import java.util.*;
 public class Calculator {
+  @SuppressWarnings("unchecked")
   public static double eval(String s) {
     String[] values = s.split(" ");
     ArrayDeque vals = new ArrayDeque();
