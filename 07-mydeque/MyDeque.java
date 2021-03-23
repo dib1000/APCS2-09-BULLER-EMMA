@@ -27,8 +27,6 @@ public class MyDeque<E>{
     end = median;
   }
   public int size() {
-    System.out.println(start);
-    System.out.println(end);
     return size;
   }
   @SuppressWarnings("unchecked")
