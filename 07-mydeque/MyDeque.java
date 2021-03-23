@@ -70,7 +70,11 @@ public class MyDeque<E>{
     if(element==null) {
       throw new NullPointerException("Can't add null elements to deque");
     }
-    if(size==0) {
+    size++;
+    if(size>data.length) {
+      resize();
+    }
+    if(size==1) {
       data[end] = element;
     }
     else {
@@ -80,7 +84,6 @@ public class MyDeque<E>{
       }
       data[end] = element;
     }
-    size++;
   }
   public E removeFirst() {
     if(size==0) {
@@ -88,9 +91,11 @@ public class MyDeque<E>{
     }
     E element = data[start];
     data[start] = null;
-    start+=1;
-    if(start>data.length-1) {
-      start = 0;
+    if(size!=1) {
+      start+=1;
+      if(start>data.length-1) {
+        start = 0;
+      }
     }
     size--;
     return element;
@@ -101,9 +106,11 @@ public class MyDeque<E>{
     }
     E element = data[end];
     data[end] = null;
-    end-=1;
-    if(end<0) {
-      end = data.length-1;
+    if(size!=1) {
+      end-=1;
+      if(end<0) {
+        end = data.length-1;
+      }
     }
     size--;
     return element;

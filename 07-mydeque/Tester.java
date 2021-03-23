@@ -116,5 +116,39 @@ public class Tester {
     System.out.println(ex.getLast());
     System.out.println(ex.size());
     System.out.println(ex.toString());
+
+    System.out.println();
+    b.removeFirst();
+    int[] add = {23,42,23};
+    b.addLast(add);
+    System.out.println(b.size());
+    System.out.println(b.getFirst());
+    System.out.println(b.getLast());
+    System.out.println(b.toString());
+
+    System.out.println();
+    n.addLast(add);
+    System.out.println(n.size());
+    System.out.println(n.getFirst());
+    System.out.println(n.getLast());
+    System.out.println(n.toString());
+    n.removeLast();
+    n.addLast(34);
+    System.out.println(n.size());
+    System.out.println(n.getFirst());
+    System.out.println(n.getLast());
+    System.out.println(n.toString());
+
+    System.out.println();
+    d.addLast(1);
+    d.addLast(2);
+    d.addLast(3);
+    d.addLast(4);
+    d.addLast(5);
+    d.addLast(6);
+    System.out.println(d.getFirst());
+    System.out.println(d.getLast());
+    System.out.println(d.size());
+    System.out.println(d.toString());
   }
 }
