@@ -1,6 +1,10 @@
 import java.util.*;
 public class Tester {
   public static void main(String[] args) {
-    Calculator.eval("11 3 - 4 + 2.5 *");
+    System.out.println(Calculator.eval("11 3 - 4 + 2.5 *"));
+    System.out.println(Calculator.eval("4 5 7 2 + - *"));
+    System.out.println(Calculator.eval("3 4 + 2 * 7 /"));
+    System.out.println(Calculator.eval("5 7 + 6 2 - *"));
+    System.out.println(Calculator.eval("4 2 + 3 5 1 - * +"));
   }
 }
