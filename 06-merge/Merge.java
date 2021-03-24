@@ -2,45 +2,60 @@ import java.util.*;
 public class Merge {
   public static void mergesort(int[] data) {
     int[] temp = new int[data.length];
-    int pair = 2;
-    int swaps = 1;
-    int howMany = ((int)(Math.log(data.length)/Math.log(2)))+1;
-    while((Math.log(pair)/Math.log(2))<=howMany) {
-      // System.out.println(pair);
-      // System.out.println(swaps);
-      if(swaps%2!=0) {
-        for(int i = 0; i<data.length; i+=pair) {
-          if(i+pair<data.length) {
-            merge(data,temp,i,i+pair);
-          }
-          else {
-            //System.out.println("WE DID IT");
-            merge(data,temp,i,data.length);
-          }
-        }
-      }
-      else {
-        for(int i = 0; i<data.length; i+=pair) {
-          if(i+pair<data.length) {
-            merge(temp,data,i,i+pair);
-          }
-          else {
-            merge(temp,data,i,data.length);
-          }
-        }
-      }
-      swaps++;
-      pair = pair * 2;
+    mergesort(data,temp,0,data.length);
+    int swipe = 0;
+    if((int)(Math.log(data.length)/Math.log(2)) == (Math.log(data.length)/Math.log(2))) {
+      swipe = (int)(Math.log(data.length)/Math.log(2));
     }
-    if(swaps%2==0) {
+    else {
+      swipe = (int)(Math.log(data.length)/Math.log(2)) + 1;
+    }
+    if(swipe%2!=0) {
       for(int i = 0; i<data.length; i++) {
         data[i] = temp[i];
       }
     }
   }
+  public static void mergesort(int[] data, int[] temp, int lo, int hi) {
+    if(hi-lo>0) {
+      int median = (hi-lo)/2;
+      if((hi-lo)%2==0) {
+        median-=1;
+      }
+      System.out.println(lo+" "+median+" "+hi);
+      mergesort(data,temp,lo,median+lo);
+      mergesort(data,temp,median+lo+1,hi);
+      int level = 0;
+      if((int)(Math.log(hi-lo)/Math.log(2)) == (Math.log(hi-lo)/Math.log(2)) && (hi-lo)>1) {
+        level = (int)(Math.log(hi-lo)/Math.log(2));
+      }
+      else {
+        level = (int)(Math.log(hi-lo)/Math.log(2)) + 1;
+      }
+      System.out.println("LEVEL: " + level);
+      if(hi==data.length) {
+        if(level%2==1) {
+          merge(data,temp,lo,hi);
+        }
+        else {
+          merge(temp,data,lo,hi);
+        }
+      }
+      else {
+        if(level%2==1) {
+          merge(data,temp,lo,hi+1);
+        }
+        else {
+          merge(temp,data,lo,hi+1);
+        }
+      }
+      System.out.println("MERGE: "+lo+" "+hi);
+      System.out.println(Arrays.toString(data));
+      System.out.println(Arrays.toString(temp));
+    }
+  }
   public static void merge(int[] data, int[] temp, int lo, int hi) {
       int median = (hi-lo)/2;
-      if(median>0) {
         if((hi-lo)%2!=0) {
           median++;
         }
@@ -72,13 +87,8 @@ public class Merge {
             ex++;
           }
         }
-        //System.out.println(Arrays.toString(temp));
-        //System.out.println(start+" "+ex+" "+index);
-        //System.out.println(data[start]+" "+data[ex]);
+        // System.out.println(Arrays.toString(temp));
+        // System.out.println(start+" "+ex+" "+index);
       }
-    }
-    else {
-      temp[lo] = data[lo];
-    }
   }
 }
