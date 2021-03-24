@@ -12,5 +12,11 @@ public class Tester {
     catch(IllegalArgumentException e) {
       e.printStackTrace();
     }
+    try {
+      Calculator.eval("5 3 7 9 + +");
+    }
+    catch(IllegalArgumentException e) {
+      e.printStackTrace();
+    }
   }
 }

@@ -37,6 +37,13 @@ public class Calculator {
         vals.addLast(convert);
       }
     }
-    return (double) vals.getLast();
+    double answer = 0;
+    if(vals.size()>1) {
+      throw new IllegalArgumentException("Too many operands");
+    }
+    else {
+      answer = (double) vals.getLast();
+    }
+    return answer;
   }
 }
