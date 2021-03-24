@@ -6,5 +6,11 @@ public class Tester {
     System.out.println(Calculator.eval("3 4 + 2 * 7 /"));
     System.out.println(Calculator.eval("5 7 + 6 2 - *"));
     System.out.println(Calculator.eval("4 2 + 3 5 1 - * +"));
+    try {
+      Calculator.eval("4 2 3 5 1 - + * + *");
+    }
+    catch(IllegalArgumentException e) {
+      e.printStackTrace();
+    }
   }
 }
