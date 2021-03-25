@@ -17,25 +17,25 @@ public class Merge {
     }
   }
   public static void mergesort(int[] data, int[] temp, int lo, int hi) {
+    int level = 0;
+    int x = hi;
+    if(lo==0 && (hi-lo)!=1) {
+      x+=1;
+    }
+    if((int)(Math.log(x-lo)/Math.log(2)) == (Math.log(x-lo)/Math.log(2)) && (hi-lo)>1) {
+      level = (int)(Math.log(x-lo)/Math.log(2));
+    }
+    else {
+      level = (int)(Math.log(x-lo)/Math.log(2)) + 1;
+    }
     if(hi-lo>0) {
       int median = (hi-lo)/2;
-      if((hi-lo)%2==0 &&(hi-lo)!=2) {
+      if(((hi-lo)%2==0 &&(hi-lo)!=2)) {
         median-=1;
       }
       System.out.println(lo+" "+median+" "+hi);
       mergesort(data,temp,lo,median+lo);
       mergesort(data,temp,median+lo+1,hi);
-      int level = 0;
-      int x = hi;
-      if(lo==0 && (hi-lo)!=1) {
-        x+=1;
-      }
-      if((int)(Math.log(x-lo)/Math.log(2)) == (Math.log(x-lo)/Math.log(2)) && (hi-lo)>1) {
-        level = (int)(Math.log(x-lo)/Math.log(2));
-      }
-      else {
-        level = (int)(Math.log(x-lo)/Math.log(2)) + 1;
-      }
       System.out.println("LEVEL: " + level);
       if(hi==data.length) {
         if(level%2==1) {
