@@ -18,7 +18,7 @@ public class Tester {
     // int[] t = new int[4];
     // Merge.merge(equal,t,0,2);
     // System.out.println(Arrays.toString(t));
-    int[] reverse = {10,9,8,7,6,4,3,2,1};
+    int[] reverse = {11,10,9,8,7,6,4,3,2,1};
     Merge.mergesort(reverse);
     System.out.println(Arrays.toString(reverse));
     // int[] big = new int[10000000];
