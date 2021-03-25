@@ -38,8 +38,8 @@ public class Calculator {
       }
     }
     double answer = 0;
-    if(vals.size()>1) {
-      throw new IllegalArgumentException("Too many operands");
+    if(vals.size()!=1) {
+      throw new IllegalArgumentException("Not the right amount of operands");
     }
     else {
       answer = (double) vals.getLast();
