@@ -6,6 +6,7 @@ public class BurnTrees{
   private static int FIRE = 1;
   private static int ASH = 3;
   private static int SPACE = 0;
+  private ArrayDeque fires;
 
 
   /*DO NOT UPDATE THIS
@@ -22,13 +23,15 @@ public class BurnTrees{
    *If you add more instance variables you can add more here,
    *otherwise it is complete
    */
+   @SuppressWarnings("unchecked")
   public BurnTrees(int width,int height, double density){
     map = new int[height][width];
+    fires = new ArrayDeque();
     for(int r=0; r<map.length; r++ )
       for(int c=0; c<map[r].length; c++ )
         if(Math.random() < density)
            map[r][c]=2;
-    start();//set the left column on fire.
+           start();//set the left column on fire.
   }
 
   /*Determine if the simulation is still burning
@@ -51,12 +54,15 @@ public class BurnTrees{
   /*
    *Sets the trees in the left column of the forest on fire
    */
+   @SuppressWarnings("unchecked")
   public void start(){
     //If you add more instance variables you can add more here,
     //otherwise it is complete.
     for(int i = 0; i < map.length; i++){
       if(map[i][0]==TREE){
         map[i][0]=FIRE;
+        int[] coords = {i,0};
+        fires.addLast(coords);
       }
     }
   }
@@ -150,6 +156,7 @@ public class BurnTrees{
 
     System.out.println(b.animate(DELAY));//animate all screens and print the final answer
     //System.out.println(b.outputAll());//print all screens and the final answer
+    //System.out.println(b.toString());
   }
 
 
