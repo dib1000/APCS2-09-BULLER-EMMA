@@ -47,7 +47,12 @@ public class BurnTrees{
    *new fires should remain fire, and not spread.
    */
   public void tick(){
-    ticks++;
+    // int checks = fires.size()/2;
+    // for(int i = 0; i<checks; i++) {
+    //   int row = fires.removeFirst();
+    //   int col = fires.removeFirst()
+    // }
+    // ticks++;
     //YOU MUST IMPLEMENT THIS
   }
 
@@ -61,8 +66,8 @@ public class BurnTrees{
     for(int i = 0; i < map.length; i++){
       if(map[i][0]==TREE){
         map[i][0]=FIRE;
-        int[] coords = {i,0};
-        fires.addLast(coords);
+        fires.addLast(i);
+        fires.addLast(0);
       }
     }
   }
@@ -154,9 +159,9 @@ public class BurnTrees{
     BurnTrees b = new BurnTrees(WIDTH,HEIGHT,DENSITY);
 
 
-    System.out.println(b.animate(DELAY));//animate all screens and print the final answer
+    //System.out.println(b.animate(DELAY));//animate all screens and print the final answer
     //System.out.println(b.outputAll());//print all screens and the final answer
-    //System.out.println(b.toString());
+    System.out.println(b.toString());
   }
 
 
