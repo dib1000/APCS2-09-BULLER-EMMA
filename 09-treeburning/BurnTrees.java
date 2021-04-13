@@ -38,7 +38,7 @@ public class BurnTrees{
    *@return false if any fires are still burning, true otherwise
    */
   public boolean done(){
-    return true;
+    return fires.size()==0;
   }
 
 
@@ -46,13 +46,35 @@ public class BurnTrees{
    *All existing fires spread new fires, and turn to ash
    *new fires should remain fire, and not spread.
    */
+   @SuppressWarnings("unchecked")
   public void tick(){
-    // int checks = fires.size()/2;
-    // for(int i = 0; i<checks; i++) {
-    //   int row = fires.removeFirst();
-    //   int col = fires.removeFirst()
-    // }
-    // ticks++;
+    int checks = fires.size()/2;
+    for(int i = 0; i<checks; i++) {
+      int row = (int) fires.removeFirst();
+      int col = (int) fires.removeFirst();
+      if((row-1)>-1 && map[row-1][col]==TREE) {
+        map[row-1][col] = FIRE;
+        fires.addLast(row-1);
+        fires.addLast(col);
+      }
+      if((row+1)<map.length && map[row+1][col]==TREE) {
+        map[row+1][col] = FIRE;
+        fires.addLast(row+1);
+        fires.addLast(col);
+      }
+      if((col-1)>-1 && map[row][col-1]==TREE) {
+        map[row][col-1] = FIRE;
+        fires.addLast(row);
+        fires.addLast(col-1);
+      }
+      if((col+1)<map[0].length && map[row][col+1]==TREE) {
+        map[row][col+1] = FIRE;
+        fires.addLast(row);
+        fires.addLast(col+1);
+      }
+      map[row][col] = ASH;
+    }
+    ticks++;
     //YOU MUST IMPLEMENT THIS
   }
 
@@ -157,11 +179,13 @@ public class BurnTrees{
       DELAY = Integer.parseInt(args[3]);
     }
     BurnTrees b = new BurnTrees(WIDTH,HEIGHT,DENSITY);
+    //BurnTrees x = new BurnTrees(5,5,1);
+    //System.out.println(x.run());
 
 
-    //System.out.println(b.animate(DELAY));//animate all screens and print the final answer
+    System.out.println(b.animate(DELAY));//animate all screens and print the final answer
     //System.out.println(b.outputAll());//print all screens and the final answer
-    System.out.println(b.toString());
+    //System.out.println(b.toString());
   }
 
 
