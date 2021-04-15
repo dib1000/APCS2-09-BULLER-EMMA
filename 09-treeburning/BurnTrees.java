@@ -55,8 +55,7 @@ public class BurnTrees{
       int col = coords[1];
       if((row-1)>-1 && map[row-1][col]==TREE) {
         map[row-1][col] = FIRE;
-        int[] f = {row-1,col};
-        fires.add(f);
+        fires.add((int[]){row-1,col});
       }
       if((row+1)<map.length && map[row+1][col]==TREE) {
         map[row+1][col] = FIRE;
@@ -182,9 +181,12 @@ public class BurnTrees{
     BurnTrees b = new BurnTrees(WIDTH,HEIGHT,DENSITY);
     //BurnTrees x = new BurnTrees(5,5,1);
     //System.out.println(x.run());
+    long start = System.currentTimeMillis();
+    b.run();
+    double quicktime = (System.currentTimeMillis()-start)/1000.0;
+    System.out.println("TIME: " + quicktime);
 
-
-    System.out.println(b.animate(DELAY));//animate all screens and print the final answer
+    //System.out.println(b.animate(DELAY));//animate all screens and print the final answer
     //System.out.println(b.outputAll());//print all screens and the final answer
     //System.out.println(b.toString());
   }
