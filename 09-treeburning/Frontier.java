@@ -23,4 +23,8 @@ public class Frontier {
   public int[] remove() {
     return (int[]) frontier.removeFirst();
   }
+
+  public String toString() {
+    return frontier.toString();
+  }
 }

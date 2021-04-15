@@ -6,7 +6,7 @@ public class BurnTrees{
   private static int FIRE = 1;
   private static int ASH = 3;
   private static int SPACE = 0;
-  private ArrayDeque fires;
+  private Frontier fires;
 
 
   /*DO NOT UPDATE THIS
@@ -26,7 +26,7 @@ public class BurnTrees{
    @SuppressWarnings("unchecked")
   public BurnTrees(int width,int height, double density){
     map = new int[height][width];
-    fires = new ArrayDeque();
+    fires = new Frontier(height);
     for(int r=0; r<map.length; r++ )
       for(int c=0; c<map[r].length; c++ )
         if(Math.random() < density)
@@ -48,29 +48,30 @@ public class BurnTrees{
    */
    @SuppressWarnings("unchecked")
   public void tick(){
-    int checks = fires.size()/2;
+    int checks = fires.size();
     for(int i = 0; i<checks; i++) {
-      int row = (int) fires.removeFirst();
-      int col = (int) fires.removeFirst();
+      int[] coords = (int[]) fires.remove();
+      int row = coords[0];
+      int col = coords[1];
       if((row-1)>-1 && map[row-1][col]==TREE) {
         map[row-1][col] = FIRE;
-        fires.addLast(row-1);
-        fires.addLast(col);
+        int[] f = {row-1,col};
+        fires.add(f);
       }
       if((row+1)<map.length && map[row+1][col]==TREE) {
         map[row+1][col] = FIRE;
-        fires.addLast(row+1);
-        fires.addLast(col);
+        int[] I = {row+1 , col};
+        fires.add(I);
       }
       if((col-1)>-1 && map[row][col-1]==TREE) {
         map[row][col-1] = FIRE;
-        fires.addLast(row);
-        fires.addLast(col-1);
+        int[] r = {row, col-1};
+        fires.add(r);
       }
       if((col+1)<map[0].length && map[row][col+1]==TREE) {
         map[row][col+1] = FIRE;
-        fires.addLast(row);
-        fires.addLast(col+1);
+        int[] e = {row,col+1};
+        fires.add(e);
       }
       map[row][col] = ASH;
     }
@@ -88,8 +89,8 @@ public class BurnTrees{
     for(int i = 0; i < map.length; i++){
       if(map[i][0]==TREE){
         map[i][0]=FIRE;
-        fires.addLast(i);
-        fires.addLast(0);
+        int[] fire = {i,0};
+        fires.add(fire);
       }
     }
   }
