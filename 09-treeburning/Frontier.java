@@ -13,4 +13,9 @@ public class Frontier {
   public int size() {
     return frontier.size();
   }
+
+  @SuppressWarnings("unchecked")
+  public void add(int[] location) {
+    frontier.addLast(location);
+  }
 }
