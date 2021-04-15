@@ -18,4 +18,9 @@ public class Frontier {
   public void add(int[] location) {
     frontier.addLast(location);
   }
+
+  @SuppressWarnings("unchecked")
+  public int[] remove() {
+    return (int[]) frontier.removeFirst();
+  }
 }

@@ -8,5 +8,7 @@ public class frontierTester {
     int[] add = {3,4};
     n.add(add);
     System.out.println(n.size());
+    int[] see = n.remove();
+    System.out.println(Arrays.toString(see));
   }
 }
