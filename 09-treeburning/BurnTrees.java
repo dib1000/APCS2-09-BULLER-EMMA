@@ -55,7 +55,8 @@ public class BurnTrees{
       int col = coords[1];
       if((row-1)>-1 && map[row-1][col]==TREE) {
         map[row-1][col] = FIRE;
-        fires.add((int[]){row-1,col});
+        int[] f = {row-1,col};
+        fires.add(f);
       }
       if((row+1)<map.length && map[row+1][col]==TREE) {
         map[row+1][col] = FIRE;
