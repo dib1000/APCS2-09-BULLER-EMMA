@@ -5,62 +5,51 @@ public class Merge {
     for(int i = 0; i<data.length; i++) {
       temp[i] = data[i];
     }
-    mergesort(data,temp,0,data.length);
+    mergesort(data,temp,0,data.length-1);
+    for(int j = 0; j<data.length; j++) {
+      data[j] = temp[j];
+    }
   }
   public static void mergesort(int[] data, int[] temp, int lo, int hi) {
-    if(hi-lo>0) {
-      int median = (hi-lo)/2;
-      if((hi-lo)%2==0) {
-        median--;
-      }
-      mergesort(temp,data,lo,median+lo);
-      mergesort(temp,data,median+lo+1,hi);
-      if(hi<data.length) {
-        merge(data,temp,lo,hi+1);
-      }
-      else {
-        merge(data,temp,lo,hi);
-      }
+    if(lo<hi) {
+      int median = (hi-lo)/2 + lo;
+      mergesort(temp,data,lo,median);
+      mergesort(temp,data,median+1,hi);
+      merge(data,temp,lo,hi);
       System.out.println("MERGE: "+lo+" "+hi);
       System.out.println(Arrays.toString(data));
       System.out.println(Arrays.toString(temp));
     }
   }
   public static void merge(int[] data, int[] temp, int lo, int hi) {
-      int median = (hi-lo)/2;
-        if((hi-lo)%2!=0) {
-          median++;
-        }
-        int ex = median+lo;
-        int start = lo;
-        int index = lo;
-        while(index<hi) {
-          if(start>=(median+lo) || ex>=hi) {
-            if(start>=(median+lo)) {
-              temp[index] = data[ex];
-              index++;
-              ex++;
-            }
-            else{
-              temp[index] = data[start];
-              index++;
-              start++;
-            }
-        }
-        else {
-          if(data[start]<data[ex]) {
-            temp[index] = data[start];
-            index++;
-            start++;
-          }
-          else {
-            temp[index] = data[ex];
-            index++;
-            ex++;
-          }
-        }
-        // System.out.println(Arrays.toString(temp));
-        // System.out.println(start+" "+ex+" "+index);
+    int median = lo + (hi-lo)/2;
+    int start = lo;
+    int end = median + 1;
+    int index = lo;
+
+    while(start<median+1 && end<hi+1) {
+      if(data[start] <= data[end]) {
+        temp[index] = data[start];
+        start++;
       }
+      else {
+        temp[index] = data[end];
+        end++;
+      }
+      index++;
+    }
+
+    while(start<median+1) {
+      temp[index] = data[start];
+      start++;
+      index++;
+    }
+
+    while(end<hi+1) {
+      temp[index] = data[end];
+      end++;
+      index++;
+    }
+    //System.out.println(Arrays.toString(temp));
   }
 }
