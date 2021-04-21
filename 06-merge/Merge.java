@@ -16,9 +16,6 @@ public class Merge {
       mergesort(temp,data,lo,median);
       mergesort(temp,data,median+1,hi);
       merge(data,temp,lo,hi);
-      System.out.println("MERGE: "+lo+" "+hi);
-      System.out.println(Arrays.toString(data));
-      System.out.println(Arrays.toString(temp));
     }
   }
   public static void merge(int[] data, int[] temp, int lo, int hi) {
@@ -50,6 +47,5 @@ public class Merge {
       end++;
       index++;
     }
-    //System.out.println(Arrays.toString(temp));
   }
 }

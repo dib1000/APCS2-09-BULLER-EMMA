@@ -14,20 +14,30 @@ public class Tester {
     System.out.println(Arrays.toString(x));
     // System.out.println(2==2.0);
     // System.out.println(1==1.65545345);
-    // int[] equal = {1,1,1,1};
+    int[] equal = {1,1,1,1};
     // int[] t = new int[4];
-    // Merge.merge(equal,t,0,2);
-    // System.out.println(Arrays.toString(t));
-    int[] reverse = {11,10,9,8,7,6};
+    Merge.mergesort(equal);
+    System.out.println(Arrays.toString(equal));
+    int[] reverse = {11,10,9,8,7,6,5,4,3,2,1};
     Merge.mergesort(reverse);
     System.out.println(Arrays.toString(reverse));
-    // int[] big = new int[10000000];
-    // for(int i = 0; i<big.length; i++) {
-    //   big[i] = (int)Math.random() * 100;
-    // }
-    // long start = System.currentTimeMillis();
-    // Merge.mergesort(big);
-    // double quickTime = (System.currentTimeMillis()-start)/1000.0;
-    // System.out.println(quickTime);
+    int[] big = new int[100000000];
+    for(int i = 0; i<big.length; i++) {
+      big[i] = big.length-i;
+    }
+    int[] copy = new int[100000000];
+    for(int c = 0; c<copy.length; c++) {
+      copy[c] = big[c];
+    }
+    long start = System.currentTimeMillis();
+    Merge.mergesort(big);
+    double quickTime = (System.currentTimeMillis()-start)/1000.0;
+    System.out.println(quickTime);
+    Arrays.sort(copy);
+    for(int h = 0; h<copy.length; h++) {
+      if(copy[h]!=big[h]) {
+        System.out.println("WRONG AT: " + h);
+      }
+    }
   }
 }
