@@ -21,5 +21,14 @@ public class Tester {
     int[] child = {9,16};
     MyHeap.pushDown(child,2,0);
     System.out.println(Arrays.toString(child));
+
+    int[] equal = new int[15];
+    for(int i = 0; i<7; i++) {
+      equal[i] = 15;
+    }
+    MyHeap.pushDown(equal,7,0);
+    MyHeap.pushDown(equal,7,4);
+    MyHeap.pushDown(equal,7,6);
+    System.out.println(Arrays.toString(equal));
   }
 }
