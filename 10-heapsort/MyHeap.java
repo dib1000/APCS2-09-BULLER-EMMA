@@ -32,4 +32,11 @@ public class MyHeap {
         pushDown(data , data.length , i);
       }
     }
+
+    public static void remove(int[] data, int size) {
+      int storage = data[0];
+      data[0] = data[size-1];
+      data[size-1] = storage;
+      pushDown(data,size-1,0);
+    }
 }
