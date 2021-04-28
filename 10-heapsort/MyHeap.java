@@ -39,4 +39,11 @@ public class MyHeap {
       data[size-1] = storage;
       pushDown(data,size-1,0);
     }
+
+    public static void heapsort(int[]data) {
+      buildHeap(data);
+      for(int i = data.length; i>1; i--) {
+        remove(data,i);
+      }
+    }
 }

@@ -53,5 +53,24 @@ public class Tester {
     MyHeap.remove(t,t.length-7); //index 6
     System.out.println(Arrays.toString(t));
 
+    System.out.println();
+    System.out.println("TESTING sort");
+    int[] test = {23,1,6,19,14,18,8,24,15};
+    MyHeap.heapsort(test);
+    System.out.println(Arrays.toString(test));
+    int[] large = new int[100000000];
+    int[] copy = new int[100000000];
+    for(int i = 0; i<large.length; i++) {
+      large[i] = (int) (Math.random() * 100);
+      copy[i] = large[i];
+    }
+    MyHeap.heapsort(large);
+    Arrays.sort(copy);
+    for(int i = 0; i<large.length; i++) {
+      if(large[i]!=copy[i]) {
+        System.out.println("INDEX: "+i);
+        System.out.println("SHOULD BE: " + copy[i]);
+      }
+    }
   }
 }
