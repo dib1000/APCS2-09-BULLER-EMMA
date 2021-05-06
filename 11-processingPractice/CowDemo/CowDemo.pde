@@ -10,8 +10,8 @@ void draw() {
   background(200);
   for (Cow c : particles) {
     c.move();
-    c.display();
     c.collide(particles);
+    c.display();
   }
   fill(0);
   textSize(20);

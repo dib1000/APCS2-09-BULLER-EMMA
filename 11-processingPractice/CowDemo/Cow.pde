@@ -28,6 +28,9 @@ public class Cow {
   void display() {
     stroke(0);
     fill(c);
+    if(colliding) {
+      fill(255,0,0,70);
+    }
     ellipse(x, y, radius*2, radius*2);
     if(selected) {
       fill(255);
@@ -48,11 +51,18 @@ public class Cow {
   }
   
   void collide(ArrayList<Cow>others) {
+    int counter = 0;
     for(Cow c : others) {
       float d = dist(x,y,c.x,c.y);
       if(d<radius+c.radius && d!=0) {
-        colliding = !colliding;
+        counter++;
       }
+    }
+    if(counter>0) {
+      colliding = true;
+    }
+    else {
+      colliding = false;
     }
   }
 }
