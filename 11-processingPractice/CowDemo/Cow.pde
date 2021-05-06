@@ -30,6 +30,9 @@ public class Cow {
     fill(c);
     ellipse(x, y, radius*2, radius*2);
     if(selected) {
+      fill(255);
+      ellipse(x-radius/5,y-radius/5,radius/5,radius/5);
+      ellipse(x+radius/5,y-radius/5,radius/5,radius/5);
       fill(0);
       textSize(15);
       text("DX: " + dx,x+radius,y);
