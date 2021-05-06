@@ -23,6 +23,11 @@ void mousePressed() {
     random(6)-3,
     random(6)-3));
   }
+  if(mouseButton == LEFT) {
+    for(Cow c: particles) {
+      c.click();
+    }
+  }
 }
 
 void keyPressed() {
