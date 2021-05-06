@@ -28,11 +28,13 @@ public class Cow {
   void display() {
     stroke(0);
     fill(c);
-    if(selected) {
-      fill(133);
-    }
     ellipse(x, y, radius*2, radius*2);
-    
+    if(selected) {
+      fill(0);
+      textSize(15);
+      text("DX: " + dx,x+radius,y);
+      text("DY: " + dy,x+radius,y+15);
+    }
   }
 
   void click(){
