@@ -1,6 +1,7 @@
 public class Cow {
   float x, y, dx, dy, radius;
   color c;
+  boolean colliding, selected;
 
   Cow(float rad, float x, float y, float dx, float dy) {
     radius = rad;
@@ -9,6 +10,8 @@ public class Cow {
     this.dx = (int)(dx*100)/100.0;
     this.dy = (int)(dy*100)/100.0;
     c = color(random(255),random(255),random(255));
+    colliding = false;
+    selected = false;
 
   }
   Cow() {
