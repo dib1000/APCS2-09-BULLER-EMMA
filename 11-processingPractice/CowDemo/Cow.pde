@@ -44,6 +44,15 @@ public class Cow {
    if(dist(x,y,mouseX,mouseY)<=radius) {
        selected = !selected;
    }
+   
   }
-
+  
+  void collide(ArrayList<Cow>others) {
+    for(Cow c : others) {
+      float d = dist(x,y,c.x,c.y);
+      if(d<radius+c.radius && d!=0) {
+        colliding = !colliding;
+      }
+    }
+  }
 }
