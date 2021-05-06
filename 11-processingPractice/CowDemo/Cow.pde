@@ -20,8 +20,14 @@ public class Cow {
   }
   
   void move() {
-    x += dx;
-    y += dy;
+    if(selected && colliding) {
+      x += 2*dx;
+      y += 2*dy;
+    }
+    else {
+      x += dx;
+      y += dy;
+    }
     if (x >= width - radius || x <= radius) dx *= -1;
     if (y >= height - radius || y <= radius) dy *= -1;
   }
