@@ -71,4 +71,17 @@ public class Cow {
       colliding = false;
     }
   }
+   void turn(float angle){
+     float current = atan2(dy,dx);
+     float hypotnuse = sqrt(dy*dy+dx*dx);
+     float turned = current + radians(angle);
+     dx = hypotnuse * cos(turned);
+     dy = hypotnuse * sin(turned);
+     
+   }
+    void changeSpeed(float dv) {
+      float angle = atan2(y,x);
+      dx += dv * cos(angle);
+      dy += dv * sin(angle);
+    }
 }

@@ -27,6 +27,7 @@ void mousePressed() {
   if(mouseButton == LEFT) {
     for(Cow c: particles) {
       c.click();
+      //c.changeSpeed(2);
     }
   }
 }
@@ -36,6 +37,11 @@ void keyPressed() {
     int size = particles.size();
     for(int i = 0; i< size; i++) {
       particles.remove(0);
+    }
+   }
+     if(key == 't') {
+    for(Cow c: particles) {
+      c.turn(30);
     }
   }
   
