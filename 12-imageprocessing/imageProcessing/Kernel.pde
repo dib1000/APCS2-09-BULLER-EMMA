@@ -20,7 +20,18 @@ public class Kernel {
       return color(0);
     }
     else {
-      return color(255);
+      float r = 0.0;
+      float g = 0.0;
+      float b = 0.0;
+      for(int i = x - 1; i < x+2; i++) {
+        for(int j = y - 1; j < y+2; j++) {
+          color current = img.get(x,y);
+          r += red(current) * .4;
+          g += green(current) * .4;
+          b += blue(current) * .4;
+        }
+      }
+      return color(r,g,b);
     }
   }
 
