@@ -16,7 +16,12 @@ public class Kernel {
     Calculate the convolution of r/g/b separately, and return that color
   */
   color calcNewColor(PImage img, int x, int y) {
-    return color(255);
+    if(x == 0 || x == img.width -1 || y == 0 || y == img.height -1) {
+      return color(0);
+    }
+    else {
+      return color(255);
+    }
   }
 
 
