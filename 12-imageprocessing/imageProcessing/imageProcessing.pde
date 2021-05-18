@@ -1,6 +1,6 @@
 void setup(){
   size(1450,500);
-  PImage car = loadImage("blobby.jpg");
+  PImage car = loadImage("racecar.jpg");
   PImage output = car.copy();
   Kernel k = new Kernel( new float[][]    { {0.0625, .125, 0.0625},
      {0.125, 0.25, 0.125},
