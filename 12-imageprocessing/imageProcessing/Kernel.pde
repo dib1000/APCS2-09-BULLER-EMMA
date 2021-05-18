@@ -25,10 +25,10 @@ public class Kernel {
       float b = 0.0;
       for(int i = x - 1; i < x+2; i++) {
         for(int j = y - 1; j < y+2; j++) {
-          color current = img.get(x,y);
-          r += red(current) * .4;
-          g += green(current) * .4;
-          b += blue(current) * .4;
+          color current = img.get(i,j);
+          r += red(current) * kernel[i-(x-1)][j-(y-1)];
+          g += green(current) * kernel[i-(x-1)][j-(y-1)];
+          b += blue(current) * kernel[i-(x-1)][j-(y-1)];
         }
       }
       return color(r,g,b);
